@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const NavigationLink = styled.a`
+const NavigationLink = styled(Link)`
     text-decoration: none;
 `;
 
@@ -38,12 +38,12 @@ const Header = ({ siteTitle }) => (
     </Logo>
     <SiteNavigation>
       <NavigationList>
-        <li><NavigationLink href="/">O nas</NavigationLink></li>
-        <li><NavigationLink href="/">Oferta</NavigationLink></li>
-        <li><NavigationLink href="/">Nasz dzien</NavigationLink></li>
-        <li><NavigationLink href="/">Galeria</NavigationLink></li>
-        <li><NavigationLink href="/">ABC przedszkolaka</NavigationLink></li>
-        <li><NavigationLink href="/">Kontakt</NavigationLink></li>
+        <li><NavigationLink to="/">O nas</NavigationLink></li>
+        <li><NavigationLink to="/">Oferta</NavigationLink></li>
+        <li><NavigationLink to="/">Nasz dzien</NavigationLink></li>
+        <li><NavigationLink to="/">Galeria</NavigationLink></li>
+        <li><NavigationLink to="/">ABC przedszkolaka</NavigationLink></li>
+        <li><NavigationLink to="/">Kontakt</NavigationLink></li>
       </NavigationList>
     </SiteNavigation>
   </StyledHeader>
