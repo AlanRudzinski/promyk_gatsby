@@ -1,11 +1,11 @@
-import header from './header';
-import image from './image';
-import layout from './layout';
-import seo from './seo';
+import Header from './Header';
+import Image from './Image';
+import Layout from './Layout';
+import Seo from './Seo';
 
 export {
-  header,
-  image,
-  layout,
-  seo,
+  Header,
+  Image,
+  Layout,
+  Seo,
 };
