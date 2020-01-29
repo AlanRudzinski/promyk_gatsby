@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
-import Header from '../header';
+import Header from '../../components/Header';
 
 const GlobalStyle = createGlobalStyle`
   body {
