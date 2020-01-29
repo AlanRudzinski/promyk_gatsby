@@ -38,7 +38,7 @@ const Header = ({ siteTitle }) => (
     </Logo>
     <SiteNavigation>
       <NavigationList>
-        <li><NavigationLink to="/">O nas</NavigationLink></li>
+        <li><NavigationLink to="/test">O nas</NavigationLink></li>
         <li><NavigationLink to="/">Oferta</NavigationLink></li>
         <li><NavigationLink to="/">Nasz dzien</NavigationLink></li>
         <li><NavigationLink to="/">Galeria</NavigationLink></li>
