@@ -12,6 +12,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
+import LandingPageDescription from '../../components/LandingPageDescription';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Hero />
+      <LandingPageDescription />
       <div
         style={{
           margin: '0 auto',
