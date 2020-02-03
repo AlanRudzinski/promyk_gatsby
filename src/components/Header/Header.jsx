@@ -19,6 +19,8 @@ const NavigationList = styled.ul`
 
 const StyledHeader = styled.header`
     display: flex;
+    background: red;
+    height: 10vh;
 `;
 
 const Logo = styled.div`
