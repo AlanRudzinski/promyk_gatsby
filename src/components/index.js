@@ -2,6 +2,7 @@ import Header from './Header';
 import Hero from './Hero';
 import Image from './Image';
 import LandingPageDescription from './LandingPageDescription';
+import LandingPageOurDay from './LandingPageOurDay';
 import Seo from './Seo';
 
 export {
@@ -9,5 +10,6 @@ export {
   Hero,
   Image,
   LandingPageDescription,
+  LandingPageOurDay,
   Seo,
 };
