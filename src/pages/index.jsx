@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { Seo, Image } from 'components';
+import {
+  Seo, Image, Hero, LandingPageDescription, LandingPageOurDay,
+} from 'components';
+
 import Layout from 'containers/Layout';
 import content from 'content/home.json';
-
-import Hero from '../components/Hero';
-import LandingPageDescription from '../components/LandingPageDescription';
-import LandingPageOurDay from '../components/LandingPageOurDay';
 
 const IndexPage = () => (
   <Layout>
