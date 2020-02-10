@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import content from 'content/home.json';
 
 
 const HeroContainer = styled.section`
@@ -8,7 +9,7 @@ const HeroContainer = styled.section`
 
 const Hero = () => (
   <HeroContainer>
-    <span>Hero</span>
+    <span>{content.heroDescription}</span>
   </HeroContainer>
 );
 

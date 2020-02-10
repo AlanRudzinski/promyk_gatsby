@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import content from 'content/schedule.json';
+
 
 const LandingPageOurDayContainer = styled.div`
   display: flex;
@@ -9,7 +11,7 @@ const LandingPageOurDayContainer = styled.div`
 const LandingPageOurDay = () => (
   <LandingPageOurDayContainer>
     <img src="https://picsum.photos/300/400" alt="" />
-    <span>Nasz dzięń jesst idealnie zaplanowany i dzieci maja co robić</span>
+    <span>{content.shortDescription}</span>
   </LandingPageOurDayContainer>
 );
 
