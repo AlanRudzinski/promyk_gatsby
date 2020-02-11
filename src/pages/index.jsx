@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import {
-  Seo, Image, Hero, LandingPageDescription, LandingPageOurDay,
-} from 'components';
+import { Seo, Image, Hero } from 'components';
 
 import Layout from 'containers/Layout';
+import { LandingPageDescription, LandingPageOurDay } from 'containers/MainSection';
 import content from 'content/home.json';
 
 const IndexPage = () => (
