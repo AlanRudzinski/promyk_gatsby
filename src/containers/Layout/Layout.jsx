@@ -10,8 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
-import Header from '../../components/Header';
-import Hero from '../../components/Hero';
+import Header from 'components/Header';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -35,7 +34,6 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Hero />
       <div
         style={{
           margin: '0 auto',
