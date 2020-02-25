@@ -40,12 +40,12 @@ const Header = ({ siteTitle }) => (
     </Logo>
     <SiteNavigation>
       <NavigationList>
-        <li><NavigationLink to="/">O nas</NavigationLink></li>
-        <li><NavigationLink to="/">Oferta</NavigationLink></li>
-        <li><NavigationLink to="/">Nasz dzien</NavigationLink></li>
-        <li><NavigationLink to="/">Galeria</NavigationLink></li>
-        <li><NavigationLink to="/">ABC przedszkolaka</NavigationLink></li>
-        <li><NavigationLink to="/">Kontakt</NavigationLink></li>
+        <li><NavigationLink to="/about/">O nas</NavigationLink></li>
+        <li><NavigationLink to="/activities/">Oferta</NavigationLink></li>
+        <li><NavigationLink to="/schedule/">Nasz dzien</NavigationLink></li>
+        <li><NavigationLink to="/gallery">Galeria</NavigationLink></li>
+        <li><NavigationLink to="/abc/">ABC przedszkolaka</NavigationLink></li>
+        <li><NavigationLink to="/contact/">Kontakt</NavigationLink></li>
       </NavigationList>
     </SiteNavigation>
   </StyledHeader>
