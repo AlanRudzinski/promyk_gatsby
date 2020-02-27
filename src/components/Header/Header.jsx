@@ -2,10 +2,8 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-
-const NavigationLink = styled(Link)`
-    text-decoration: none;
-`;
+import NavButton from 'components/NavButton';
+import theme from 'styles/theme';
 
 const SiteNavigation = styled.div`
     width: 60%;
@@ -27,29 +25,34 @@ const Logo = styled.div`
     width: 40%;
 `;
 
-const Header = ({ siteTitle }) => (
-  <StyledHeader>
-    <Logo>
-      <h1>
-        <Link
-          to="/"
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </Logo>
-    <SiteNavigation>
-      <NavigationList>
-        <li><NavigationLink to="/about/">O nas</NavigationLink></li>
-        <li><NavigationLink to="/activities/">Oferta</NavigationLink></li>
-        <li><NavigationLink to="/schedule/">Nasz dzien</NavigationLink></li>
-        <li><NavigationLink to="/gallery">Galeria</NavigationLink></li>
-        <li><NavigationLink to="/abc/">ABC przedszkolaka</NavigationLink></li>
-        <li><NavigationLink to="/contact/">Kontakt</NavigationLink></li>
-      </NavigationList>
-    </SiteNavigation>
-  </StyledHeader>
-);
+const Header = ({ siteTitle }) => {
+  const {
+    darkGreen, red, yellow, lightBlue, pink, orange,
+  } = theme.color;
+  return (
+    <StyledHeader>
+      <Logo>
+        <h1>
+          <Link
+            to="/"
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+      </Logo>
+      <SiteNavigation>
+        <NavigationList>
+          <NavButton text="O nas" link="/about/" color={darkGreen} />
+          <NavButton text="Oferta" link="/activities/" color={red} />
+          <NavButton text="Nasz dzien" link="/schedule/" color={yellow} />
+          <NavButton text="Galeria" link="/gallery/" color={lightBlue} />
+          <NavButton text="ABC przedszkolaka" link="/abc/" color={pink} />
+          <NavButton text="Kontakt" link="/contact/" color={orange} />
+        </NavigationList>
+      </SiteNavigation>
+    </StyledHeader>
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
