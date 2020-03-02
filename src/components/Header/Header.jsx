@@ -1,8 +1,7 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import NavButton from 'components/NavButton';
+import LogoImg from 'components/LogoImg';
 import theme from 'styles/theme';
 
 const SiteNavigation = styled.div`
@@ -17,28 +16,23 @@ const NavigationList = styled.ul`
 
 const StyledHeader = styled.header`
     display: flex;
-    background: red;
     height: 10vh;
+    justify-content: space-between;
 `;
 
 const Logo = styled.div`
-    width: 40%;
+    width: 60%;
 `;
 
-const Header = ({ siteTitle }) => {
+
+const Header = () => {
   const {
     darkGreen, red, yellow, lightBlue, pink, orange,
   } = theme.color;
   return (
     <StyledHeader>
       <Logo>
-        <h1>
-          <Link
-            to="/"
-          >
-            {siteTitle}
-          </Link>
-        </h1>
+        <LogoImg />
       </Logo>
       <SiteNavigation>
         <NavigationList>
@@ -54,12 +48,12 @@ const Header = ({ siteTitle }) => {
   );
 };
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// };
 
-Header.defaultProps = {
-  siteTitle: '',
-};
+// Header.defaultProps = {
+//   siteTitle: '',
+// };
 
 export default Header;
