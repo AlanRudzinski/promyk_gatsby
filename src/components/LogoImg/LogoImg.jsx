@@ -21,7 +21,7 @@ const LogoImg = () => {
       id
       childImageSharp {
         fixed(
-          width: 50
+          width: 70
         ) {
           ...GatsbyImageSharpFixed
         }
@@ -32,7 +32,6 @@ const LogoImg = () => {
     }
   }
   `);
-  console.log(data);
   return (
     <Img
       fixed={data.image.childImageSharp.fixed}

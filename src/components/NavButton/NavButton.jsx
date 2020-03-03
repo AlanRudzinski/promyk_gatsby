@@ -8,7 +8,6 @@ const NavButton = ({ text, link, color }) => {
     height: 41px;
     padding-left: 1rem;
     padding-right: 1rem;
-    align-text: center;
   `;
 
   const StyledNavLink = styled(Link)`
