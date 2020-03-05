@@ -1,3 +1,5 @@
+import CryonIcon from './CryonIcon';
+import HamburgerMenu from './HamburgerMenu';
 import Header from './Header';
 import Heading from './Heading';
 import Hero from './Hero';
@@ -7,6 +9,8 @@ import NavButton from './NavButton';
 import Seo from './Seo';
 
 export {
+  CryonIcon,
+  HamburgerMenu,
   Header,
   Heading,
   Hero,
