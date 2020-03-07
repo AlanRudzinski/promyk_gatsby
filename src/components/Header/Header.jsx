@@ -23,6 +23,9 @@ const NavigationList = styled.ul`
     list-style: none;
     height: 100%;
     align-items: center;
+    @media (max-width: 860px) {
+      display: none;
+    }
 `;
 
 const Header = () => {

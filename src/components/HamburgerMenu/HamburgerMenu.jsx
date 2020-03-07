@@ -12,6 +12,9 @@ const MenuContainer = styled.div`
   z-index: 3;
   padding: 10px 20px;
   transform: rotate(90deg);
+  @media (min-width: 860px) {
+    display: none;
+  }
 `;
 
 const HamburgerMenu = () => (
