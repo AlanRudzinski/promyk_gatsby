@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import content from 'content/home.json';
+import HeroImg from 'components/HeroImg';
 
 
 const HeroContainer = styled.section`
   height: 90vh;
+  border: 1px red solid;
+  padding: 0px;
+  width: 100%;
 `;
 
 const Hero = () => (
   <HeroContainer>
-    <span>{content.heroDescription}</span>
+    <HeroImg />
   </HeroContainer>
 );
 
