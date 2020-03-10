@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const BasicLineStyling = css`
   display: block;
@@ -60,19 +60,17 @@ ${props => (props.clicked ? 'transform: translate3d(0, 10px, 0) rotate(45deg);' 
 }
 `;
 
-const HamburgerMenu = () => {
-  const [clicked, setClicked] = useState(false);
-  return (
-    <Hamburger type="button" onClick={() => setClicked(!clicked)}>
-      <Box>
-        <Line clicked={clicked} />
-      </Box>
-    </Hamburger>
-  );
-};
+const HamburgerMenu = ({ clicked, handleClick }) => (
+  <Hamburger type="button" onClick={handleClick}>
+    <Box>
+      <Line clicked={clicked} />
+    </Box>
+  </Hamburger>
+);
 
-// HamburgerMenu.propTypes = {
-//   clicked: PropTypes.bool,
-// };
+HamburgerMenu.propTypes = {
+  clicked: PropTypes.bool,
+  handleClick: PropTypes.func,
+};
 
 export default HamburgerMenu;
