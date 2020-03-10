@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavButton from 'components/NavButton';
+import NavLink from 'components/NavLink';
 import LogoImg from 'components/LogoImg';
 import HamburgerMenu from 'components/HamburgerMenu';
-import theme from 'styles/theme';
 import { Link } from 'gatsby';
 
 const StyledHeader = styled.header`
@@ -28,28 +27,24 @@ const NavigationList = styled.ul`
     }
 `;
 
-const Header = () => {
-  const {
-    darkGreen, red, yellow, lightBlue, pink, orange,
-  } = theme.color;
-  return (
-    <StyledHeader>
-      <Logo>
-        <Link to="/">
-          <LogoImg />
-        </Link>
-      </Logo>
-      <NavigationList>
-        <NavButton text="O nas" link="/about/" color={darkGreen} />
-        <NavButton text="Oferta" link="/activities/" color={red} />
-        <NavButton text="Nasz dzien" link="/schedule/" color={yellow} />
-        <NavButton text="Galeria" link="/gallery/" color={lightBlue} />
-        <NavButton text="ABC przedszkolaka" link="/abc/" color={pink} />
-        <NavButton text="Kontakt" link="/contact/" color={orange} />
-      </NavigationList>
-      <HamburgerMenu />
-    </StyledHeader>
-  );
-};
+const Header = () => (
+  <StyledHeader>
+    <Logo>
+      <Link to="/">
+        <LogoImg />
+      </Link>
+    </Logo>
+    <NavigationList>
+      <NavLink text="O nas" link="/about/" color="black" />
+      <NavLink text="Oferta" link="/activities/" color="black" />
+      <NavLink text="Nasz dzien" link="/schedule/" color="black" />
+      <NavLink text="Galeria" link="/gallery/" color="black" />
+      <NavLink text="ABC przedszkolaka" link="/abc/" color="black" />
+      <NavLink text="Kontakt" link="/contact/" color="black" />
+    </NavigationList>
+    <HamburgerMenu />
+  </StyledHeader>
+);
+
 
 export default Header;

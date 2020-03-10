@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const NavButton = ({ text, link, color }) => {
+const NavLink = ({ text, link, color }) => {
   const StyledNavLi = styled.li`
     height: 41px;
     padding-left: 1rem;
@@ -22,10 +22,10 @@ const NavButton = ({ text, link, color }) => {
     <StyledNavLi><StyledNavLink to={link}>{text}</StyledNavLink></StyledNavLi>
   );
 };
-NavButton.propTypes = {
+NavLink.propTypes = {
   text: PropTypes.string,
   link: PropTypes.string,
   color: PropTypes.string,
 };
 
-export default NavButton;
+export default NavLink;

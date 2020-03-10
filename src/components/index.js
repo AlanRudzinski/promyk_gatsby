@@ -5,7 +5,7 @@ import Heading from './Heading';
 import Hero from './Hero';
 import Image from './Image';
 import LogoImg from './LogoImg';
-import NavButton from './NavButton';
+import NavLink from './NavLink';
 import Seo from './Seo';
 
 export {
@@ -16,6 +16,6 @@ export {
   Hero,
   Image,
   LogoImg,
-  NavButton,
+  NavLink,
   Seo,
 };

@@ -1,30 +1,78 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 // import PropTypes from 'prop-types';
-import CryonIcon from 'components/CryonIcon';
-import theme from 'styles/theme';
 
-const MenuContainer = styled.div`
+const BasicLineStyling = css`
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
   position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+`;
+
+const Hamburger = styled.button`
+  padding: 13px 13px;
+  margin: 0;
+  display: inline-block;
   cursor: pointer;
-  right: 0;
-  top: 0;
-  z-index: 3;
-  padding: 10px 20px;
-  transform: rotate(90deg);
+  border: 0;
+  overflow: visible;
+  background-color: transparent;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
   @media (min-width: 860px) {
     display: none;
   }
 `;
 
-const HamburgerMenu = () => (
-  <MenuContainer>
-    <CryonIcon color={theme.color.darkGreen} />
-    <CryonIcon color={theme.color.red} />
-    <CryonIcon color={theme.color.yellow} />
-  </MenuContainer>
-);
+const Box = styled.span`
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+`;
 
-// HamburgerMenu.propTypes = {};
+const Line = styled.span`
+top: 2px;
+margin-top: -2px;
+backgrond-color: #000;
+${BasicLineStyling}
+
+${props => (props.clicked ? 'transform: translate3d(0, 10px, 0) rotate(45deg);' : '')};
+&:before, &:after {
+  ${BasicLineStyling}
+  content: "";
+}
+&:after {
+  top: 20px;
+  ${props => (props.clicked ? 'transform: translate3d(0, -20px, 0) rotate(-90deg)' : '')}; 
+}
+&:before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  ${props => (props.clicked ? 'transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0); opacity: 0' : '')};
+}
+`;
+
+const HamburgerMenu = () => {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <Hamburger type="button" onClick={() => setClicked(!clicked)}>
+      <Box>
+        <Line clicked={clicked} />
+      </Box>
+    </Hamburger>
+  );
+};
+
+// HamburgerMenu.propTypes = {
+//   clicked: PropTypes.bool,
+// };
 
 export default HamburgerMenu;
