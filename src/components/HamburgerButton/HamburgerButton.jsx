@@ -43,34 +43,34 @@ margin-top: -2px;
 backgrond-color: #000;
 ${BasicLineStyling}
 
-${props => (props.clicked ? 'transform: translate3d(0, 10px, 0) rotate(45deg);' : '')};
+${props => (props.menuOpen ? 'transform: translate3d(0, 10px, 0) rotate(45deg);' : '')};
 &:before, &:after {
   ${BasicLineStyling}
   content: "";
 }
 &:after {
   top: 20px;
-  ${props => (props.clicked ? 'transform: translate3d(0, -20px, 0) rotate(-90deg)' : '')}; 
+  ${props => (props.menuOpen ? 'transform: translate3d(0, -20px, 0) rotate(-90deg)' : '')}; 
 }
 &:before {
   top: 10px;
   transition-property: transform, opacity;
   transition-timing-function: ease;
-  ${props => (props.clicked ? 'transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0); opacity: 0' : '')};
+  ${props => (props.menuOpen ? 'transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0); opacity: 0' : '')};
 }
 `;
 
-const HamburgerMenu = ({ clicked, handleClick }) => (
+const HamburgerButton = ({ menuOpen, handleClick }) => (
   <Hamburger type="button" onClick={handleClick}>
     <Box>
-      <Line clicked={clicked} />
+      <Line menuOpen={menuOpen} />
     </Box>
   </Hamburger>
 );
 
-HamburgerMenu.propTypes = {
-  clicked: PropTypes.bool,
+HamburgerButton.propTypes = {
+  menuOpen: PropTypes.bool,
   handleClick: PropTypes.func,
 };
 
-export default HamburgerMenu;
+export default HamburgerButton;

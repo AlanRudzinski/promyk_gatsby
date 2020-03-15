@@ -16,6 +16,9 @@ const NavLink = ({ text, link, color }) => {
     color: ${color};
     line-height: 41px;
     white-space: nowrap;
+    &:hover {
+      opacity: 0.7;
+    }
     `;
 
   return (
@@ -23,9 +26,13 @@ const NavLink = ({ text, link, color }) => {
   );
 };
 NavLink.propTypes = {
-  text: PropTypes.string,
-  link: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   color: PropTypes.string,
+};
+
+NavLink.defaultProps = {
+  color: 'black',
 };
 
 export default NavLink;

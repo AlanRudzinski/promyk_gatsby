@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import NavLink from 'components/NavLink';
 import LogoImg from 'components/LogoImg';
-import HamburgerMenu from 'components/HamburgerMenu';
+import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import urls from 'pages/urls';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -24,20 +26,33 @@ const NavigationList = styled.ul`
     align-items: center;
     @media (max-width: 860px) {
       flex-direction: column;
-      background: teal;
+      background-color: #8FCAC2;
       position: fixed;
       height: 100vh;
       width: 100%;
       margin-left: 0;
-      ${props => (props.clicked ? 'display: flex;' : 'display: none')};
+      overflow: hidden;
+      scroll: no;
+      justify-content: space-evenly;
+      ${props => (props.menuOpen ? 'display: flex;' : 'display: none')};
     }
 `;
 
 const Header = () => {
-  const [clicked, setClicked] = useState(false);
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
+  const {
+    abc, about, activities, schedule, gallery, contact,
+  } = urls.urls;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleClick = useCallback(() => {
+    setMenuOpen(!menuOpen);
+  });
+  useEffect(() => {
+    if (menuOpen) {
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(document.body);
+    }
+  }, [menuOpen]);
   return (
     <StyledHeader>
       <Logo>
@@ -45,15 +60,15 @@ const Header = () => {
           <LogoImg />
         </Link>
       </Logo>
-      <NavigationList clicked={clicked}>
-        <NavLink text="O nas" link="/about/" color="black" />
-        <NavLink text="Oferta" link="/activities/" color="black" />
-        <NavLink text="Nasz dzien" link="/schedule/" color="black" />
-        <NavLink text="Galeria" link="/gallery/" color="black" />
-        <NavLink text="ABC przedszkolaka" link="/abc/" color="black" />
-        <NavLink text="Kontakt" link="/contact/" color="black" />
+      <NavigationList menuOpen={menuOpen}>
+        <NavLink text="O nas" link={about} />
+        <NavLink text="Oferta" link={activities} />
+        <NavLink text="Nasz dzien" link={schedule} />
+        <NavLink text="Galeria" link={gallery} />
+        <NavLink text="ABC przedszkolaka" link={abc} />
+        <NavLink text="Kontakt" link={contact} />
       </NavigationList>
-      <HamburgerMenu clicked={clicked} handleClick={handleClick} />
+      <HamburgerButton menuOpen={menuOpen} handleClick={handleClick} />
     </StyledHeader>
   );
 };
