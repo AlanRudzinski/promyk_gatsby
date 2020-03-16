@@ -5,7 +5,7 @@ import LogoImg from 'components/LogoImg';
 import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import urls from 'pages/urls';
+import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -39,9 +39,9 @@ const NavigationList = styled.ul`
 `;
 
 const Header = () => {
-  const {
-    abc, about, activities, schedule, gallery, contact,
-  } = urls.urls;
+  const navItems = menuEntries
+    .map(({ text, link }) => <NavLink key={text} text={text} link={link} />);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {
     setMenuOpen(!menuOpen);
@@ -53,6 +53,7 @@ const Header = () => {
       enableBodyScroll(document.body);
     }
   }, [menuOpen]);
+
   return (
     <StyledHeader>
       <Logo>
@@ -61,12 +62,7 @@ const Header = () => {
         </Link>
       </Logo>
       <NavigationList menuOpen={menuOpen}>
-        <NavLink text="O nas" link={about} />
-        <NavLink text="Oferta" link={activities} />
-        <NavLink text="Nasz dzien" link={schedule} />
-        <NavLink text="Galeria" link={gallery} />
-        <NavLink text="ABC przedszkolaka" link={abc} />
-        <NavLink text="Kontakt" link={contact} />
+        {navItems}
       </NavigationList>
       <HamburgerButton menuOpen={menuOpen} handleClick={handleClick} />
     </StyledHeader>
