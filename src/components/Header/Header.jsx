@@ -1,62 +1,73 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
-
-const NavigationLink = styled(Link)`
-    text-decoration: none;
-`;
-
-const SiteNavigation = styled.div`
-    width: 60%;
-`;
-
-const NavigationList = styled.ul`
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-`;
+import NavLink from 'components/NavLink';
+import LogoImg from 'components/LogoImg';
+import HamburgerButton from 'components/HamburgerButton';
+import { Link } from 'gatsby';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
     display: flex;
-    background: red;
-    height: 10vh;
+    justify-content: space-between;
+    height: 75px;
+    width: 100%;
+    top: 0;
 `;
 
 const Logo = styled.div`
-    width: 40%;
+    margin-left: 2rem;
 `;
 
-const Header = ({ siteTitle }) => (
-  <StyledHeader>
-    <Logo>
-      <h1>
-        <Link
-          to="/"
-        >
-          {siteTitle}
+const NavigationList = styled.ul`
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    @media (max-width: 860px) {
+      flex-direction: column;
+      background-color: #8FCAC2;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      margin-left: 0;
+      overflow: hidden;
+      scroll: no;
+      justify-content: space-evenly;
+      ${props => (props.menuOpen ? 'display: flex;' : 'display: none')};
+    }
+`;
+
+const Header = () => {
+  const navItems = menuEntries
+    .map(({ text, link }) => <NavLink key={text} text={text} link={link} />);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleClick = useCallback(() => {
+    setMenuOpen(prevState => !prevState);
+  }, [setMenuOpen]);
+  useEffect(() => {
+    if (menuOpen) {
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(document.body);
+    } return () => enableBodyScroll(document.body);
+  }, [menuOpen]);
+
+  return (
+    <StyledHeader>
+      <Logo>
+        <Link to="/">
+          <LogoImg />
         </Link>
-      </h1>
-    </Logo>
-    <SiteNavigation>
-      <NavigationList>
-        <li><NavigationLink to="/">O nas</NavigationLink></li>
-        <li><NavigationLink to="/">Oferta</NavigationLink></li>
-        <li><NavigationLink to="/">Nasz dzien</NavigationLink></li>
-        <li><NavigationLink to="/">Galeria</NavigationLink></li>
-        <li><NavigationLink to="/">ABC przedszkolaka</NavigationLink></li>
-        <li><NavigationLink to="/">Kontakt</NavigationLink></li>
+      </Logo>
+      <NavigationList menuOpen={menuOpen}>
+        {navItems}
       </NavigationList>
-    </SiteNavigation>
-  </StyledHeader>
-);
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+      <HamburgerButton menuOpen={menuOpen} handleClick={handleClick} />
+    </StyledHeader>
+  );
 };
 
-Header.defaultProps = {
-  siteTitle: '',
-};
 
 export default Header;

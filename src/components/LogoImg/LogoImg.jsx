@@ -14,20 +14,30 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const LogoImg = () => {
   const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "promyk_logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+  query Images {
+    image: file(relativePath: {eq: "promyk_logo.png"}) {
+      id
+      childImageSharp {
+        fixed(
+          width: 70
+        ) {
+          ...GatsbyImageSharpFixed
+        }
+        fluid {
+          ...GatsbyImageSharpFluid  
         }
       }
     }
+  }
   `);
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return (
+    <Img
+      fixed={data.image.childImageSharp.fixed}
+      alt="Logo Akademi dzieciecej Promyk"
+    />
+  );
 };
 
-export default Image;
+export default LogoImg;

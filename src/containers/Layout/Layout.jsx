@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Header from 'components/Header';
@@ -19,42 +19,39 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-      query SiteTitleQuery {
-          site {
-              siteMetadata {
-                  title
-              }
-          }
-      }
-  `);
-
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '0px 1.0875rem 1.45rem',
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
+const Layout = ({ children }) => (
+  // const data = useStaticQuery(graphql`
+  //     query SiteTitleQuery {
+  //         site {
+  //             siteMetadata {
+  //                 title
+  //             }
+  //         }
+  //     }
+  // `);
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Header />
+    <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 960,
+        padding: '0px 1.0875rem 1.45rem',
+        paddingTop: 0,
+      }}
+    >
+      <main>{children}</main>
+      <footer>
           ©
-          {' '}
-          {new Date().getFullYear()}
+        {' '}
+        {new Date().getFullYear()}
 , Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </ThemeProvider>
-  );
-};
+        {' '}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </div>
+  </ThemeProvider>
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
