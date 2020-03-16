@@ -51,7 +51,7 @@ const Header = () => {
       disableBodyScroll(document.body);
     } else {
       enableBodyScroll(document.body);
-    }
+    } return () => enableBodyScroll(document.body);
   }, [menuOpen]);
 
   return (
