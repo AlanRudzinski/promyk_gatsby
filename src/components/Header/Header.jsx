@@ -44,8 +44,8 @@ const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {
-    setMenuOpen(!menuOpen);
-  });
+    setMenuOpen(wasOpen => wasOpen !== true);
+  }, [menuOpen]);
   useEffect(() => {
     if (menuOpen) {
       disableBodyScroll(document.body);
