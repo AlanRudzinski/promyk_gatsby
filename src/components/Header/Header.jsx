@@ -13,6 +13,18 @@ const StyledHeader = styled.header`
     height: 75px;
     width: 100%;
     top: 0;
+    position: fixed;
+    &::after {
+      content: "";
+      background-color: white;
+      opacity: 0.95;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+    }
 `;
 
 const Logo = styled.div`
