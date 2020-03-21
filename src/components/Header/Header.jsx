@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
     width: 100%;
     top: 0;
     position: fixed;
+    z-index: 100;
     &::after {
       content: "";
       background-color: white;
@@ -23,7 +24,7 @@ const StyledHeader = styled.header`
       bottom: 0;
       right: 0;
       position: absolute;
-      z-index: -1;   
+      z-index: -2;   
     }
 `;
 
