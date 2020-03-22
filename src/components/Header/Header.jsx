@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     height: 75px;
-    width: 100%;
+    width: 100vw;
     top: 0;
     position: fixed;
     z-index: 100;
