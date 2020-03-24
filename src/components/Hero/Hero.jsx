@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from 'styles/theme';
 import content from 'content/home.json';
 import smallImg from './hero_w_480.png';
 import mediumImg from './hero_w_1611.png';
 import largeImg from './hero_w_2387.png';
 import xlargeImg from './hero_w_3840.png';
-
+// daj tutaj calc(100vh - $navHeight)
 const HeroContainer = styled.section`
-  height: 90vh;
-  margin-top: 75px;
+  height: calc(100vh - ${theme.layout.headerHeight});
+  margin-top: ${theme.layout.headerHeight};
   z-index: 1;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,12 +33,11 @@ const HeroContainer = styled.section`
 `;
 
 const HeroTextBox = styled.span`
-    background-color: white;
+    background-color: rgba(255,255,255,.8);
     color: black;
     display: inline-flex;
     margin-top: 45vh;
     align-items: center;
-    opacity: 0.7;
     width: 100%;
     height: 170px;
     padding: 20px 40px;

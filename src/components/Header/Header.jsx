@@ -5,27 +5,18 @@ import LogoImg from 'components/LogoImg';
 import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import theme from 'styles/theme';
 import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
     display: flex;
+    background-color: rgba(255,255,255,.95)
     justify-content: space-between;
-    height: 75px;
+    height: ${theme.layout.headerHeight};
     width: 100vw;
     top: 0;
     position: fixed;
     z-index: 100;
-    &::after {
-      content: "";
-      background-color: white;
-      opacity: 0.95;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -2;   
-    }
 `;
 
 const Logo = styled.div`

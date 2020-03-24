@@ -8,4 +8,7 @@ export default {
     pink: '#F770AF',
     orange: '#FF8700',
   },
+  layout: {
+    headerHeight: '75px',
+  },
 };
