@@ -34,9 +34,9 @@ const HeroContainer = styled.section`
 const HeroTextBox = styled.span`
     background-color: white;
     color: black;
-    display: inline-block;
+    display: inline-flex;
     margin-top: 45vh;
-    text-align: center;
+    align-items: center;
     opacity: 0.7;
     width: 100%;
     height: 170px;
