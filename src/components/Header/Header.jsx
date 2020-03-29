@@ -10,7 +10,7 @@ import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
     display: flex;
-    background-color: rgba(255,255,255,.95)
+    background-color: rgba(255,255,255,.95);
     justify-content: space-between;
     height: ${theme.layout.headerHeight};
     width: 100vw;
