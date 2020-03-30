@@ -13,9 +13,9 @@ const ImagesContainer = styled.div`
 `;
 
 const Description = () => (
-  <Section title={{ value: content.title }}>
+  <Section title={{ value: content.firstTitle }}>
     <Container>
-      <p>{content.homePageDescription}</p>
+      <p>{content.firstContent}</p>
       <ImagesContainer>
         <img src="https://picsum.photos/200" alt="" />
         <img src="https://picsum.photos/200" alt="" />

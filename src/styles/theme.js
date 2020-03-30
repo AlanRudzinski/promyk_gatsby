@@ -1,6 +1,6 @@
 export default {
   color: {
-    primary: 'tomato',
+    primary: 'black',
     darkGreen: '#286D66',
     red: '#FD2F14',
     yellow: '#FFD203',

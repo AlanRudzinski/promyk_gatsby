@@ -44,7 +44,7 @@ const NavigationList = styled.ul`
 
 const Header = () => {
   const navItems = menuEntries
-    .map(({ text, link }) => <NavLink key={text} text={text} link={link} />);
+    .map(({ text, link, color }) => <NavLink key={text} text={text} link={link} color={color} />);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {

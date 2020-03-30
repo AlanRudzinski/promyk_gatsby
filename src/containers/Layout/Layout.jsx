@@ -15,6 +15,9 @@ import Header from 'components/Header';
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${theme.color.primary};
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 16px;
   }
 `;
 
