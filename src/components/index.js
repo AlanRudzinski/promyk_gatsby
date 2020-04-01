@@ -1,6 +1,7 @@
 /* eslint-disable import/no-duplicates */
 /* eslint-disable camelcase */
 import CryonIcon from './CryonIcon';
+import FlippingCard from './FlippingCard';
 import HamburgerButton from './HamburgerButton';
 import Header from './Header';
 import menuEntries from './Header';
@@ -19,6 +20,7 @@ import Seo from './Seo';
 
 export {
   CryonIcon,
+  FlippingCard,
   HamburgerButton,
   Header,
   menuEntries,

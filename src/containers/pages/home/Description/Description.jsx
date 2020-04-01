@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import content from 'content/home.json';
 import Section from 'containers/Section';
 import RedirectButton from 'components/RedirectButton';
+import FlippingCard from 'components/FlippingCard';
 import turtle from './turtle.svg';
 
 const Content = styled.div`
@@ -32,10 +33,6 @@ const ImagesContainer = styled.div`
   display: flex;
 `;
 
-const SpinningCard = styled.img`
-  margin-right: 30px;
-`;
-
 const Description = () => (
   <Section title={{ value: content.firstTitle }}>
     <Container>
@@ -49,9 +46,9 @@ const Description = () => (
         <ContentText>{content.firstContent}</ContentText>
       </Content>
       <ImagesContainer>
-        <SpinningCard src="https://picsum.photos/311/350" alt="" />
-        <SpinningCard src="https://picsum.photos/311/350" alt="" />
-        <SpinningCard src="https://picsum.photos/311/350" alt="" />
+        <FlippingCard />
+        <FlippingCard />
+        <FlippingCard />
       </ImagesContainer>
       <RedirectButton text="Zobacz pelna oferte..." destination="/about" />
     </Container>
