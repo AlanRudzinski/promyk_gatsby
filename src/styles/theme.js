@@ -7,6 +7,7 @@ export default {
     lightBlue: '#79CDDF',
     pink: '#F770AF',
     orange: '#FF8700',
+    defaultButton: '#66B6BA',
   },
   layout: {
     headerHeight: '75px',
