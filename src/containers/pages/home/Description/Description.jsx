@@ -5,15 +5,35 @@ import Section from 'containers/Section';
 import RedirectButton from 'components/RedirectButton';
 import FlippingCard from 'components/FlippingCard';
 import turtle from './turtle.svg';
+import batman from './batman.jpg';
+import garden from './garden.jpg';
+import santa from './santa.jpg';
 
 const Content = styled.div`
   display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  @media(min-width: 850px){
+    flex-direction: row;
+  }
 `;
 
 const ContentImg = styled.img`
-  margin-top: -100px;
-  margin-left: 50px;
-  margin-right: 20px;
+  height: 177px;
+  width: 134px;
+  @media(min-width: 850px) {
+    margin-top: -100px;
+    height: 295px;
+    width: 223px;
+  }
+  @media(min-width: 1050px) {
+    margin-left: -200px;
+    margin-right: 10px;
+  }
 `;
 
 const ContentText = styled.p`
@@ -31,6 +51,9 @@ const Container = styled.div`
 
 const ImagesContainer = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Description = () => (
@@ -40,15 +63,25 @@ const Description = () => (
         <ContentImg
           src={turtle}
           alt="cute turtle"
-          height="295"
-          width="233"
         />
         <ContentText>{content.firstContent}</ContentText>
       </Content>
       <ImagesContainer>
-        <FlippingCard />
-        <FlippingCard />
-        <FlippingCard />
+        <FlippingCard
+          imageSrc={garden}
+          front={content.FirstCardTitle}
+          back={content.FirstCardContent}
+        />
+        <FlippingCard
+          imageSrc={batman}
+          front={content.SecondCardTitle}
+          back={content.SecondCardContent}
+        />
+        <FlippingCard
+          imageSrc={santa}
+          front={content.ThirdCardTitle}
+          back={content.ThirdCardContent}
+        />
       </ImagesContainer>
       <RedirectButton text="Zobacz pelna oferte..." destination="/about" />
     </Container>

@@ -4,25 +4,24 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-const RedirectButton = ({ text, destination, color }) => {
-  const StyledButton = styled.button`
-  width: 311px;
-  height: 47px;
-  background-color: white;
-  border: 1px solid ${color};
-  &:hover {
-    background-color: ${color};
-    cursor: pointer;
-  }
+const StyledButton = styled.button`
+width: 311px;
+height: 47px;
+background-color: white;
+border: 1px solid ${props => props.color};
+&:hover {
+  background-color: ${props => props.color};
+  cursor: pointer;
+}
 `;
-  return (
-    <Link to={destination}>
-      <StyledButton type="submit">
-        {text}
-      </StyledButton>
-    </Link>
-  );
-};
+
+const RedirectButton = ({ text, destination, color }) => (
+  <Link to={destination}>
+    <StyledButton type="submit" color={color}>
+      {text}
+    </StyledButton>
+  </Link>
+);
 
 RedirectButton.propTypes = {
   text: PropTypes.string.isRequired,
