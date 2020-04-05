@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styles/theme';
 import PropTypes from 'prop-types';
+import hexToRGBA from '../../utils/hexToRGBA';
 
 const cardSide = css`
   position: absolute;
@@ -15,7 +16,7 @@ const cardSide = css`
   padding: 1rem;
 `;
 
-const Card = styled.article`
+const StyledCard = styled.article`
   width: 311px;
   height: 350px;
   margin: 1rem;
@@ -31,18 +32,18 @@ const Card = styled.article`
 
 const StyledContent = styled.p`
   ${cardSide}
-  background-color: ${theme.color.defaultButton};
+  background-color: ${theme.color.secondary};
   transform: rotateY(180deg);
 `;
 
-const Text = styled.h3`
+const StyledText = styled.h3`
   height: 70px;
   width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(102, 182, 186, .7);
+  background-color: ${hexToRGBA(theme.color.primary, 0.7)};
 `;
 
 const StyledTitle = styled.div`
@@ -53,14 +54,14 @@ const StyledTitle = styled.div`
   background-size: cover;
 `;
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
   cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center;
-  border: 2px solid ${theme.color.defaultButton};
+  border: 3px solid ${theme.color.secondary};
   transition: all 1.5s ease;
   transform: ${props => (props.flipped ? 'scale(1.1) rotateY(-180deg);' : 'scale(1) rotateY(0deg);')}
   box-shadow: ${props => (props.flipped ? '0 0 10px 0 rgba(0, 0, 0, .1);' : '0 0 0 0')}
@@ -73,12 +74,12 @@ const FlippingCard = ({ imageSrc, front, back }) => {
     setFlipped(prevState => !prevState);
   };
   return (
-    <Card onClick={handleClick} flipped={flipped}>
-      <Wrapper flipped={flipped}>
-        <StyledTitle imageSrc={imageSrc}><Text>{front}</Text></StyledTitle>
+    <StyledCard onClick={handleClick} flipped={flipped}>
+      <StyledWrapper flipped={flipped}>
+        <StyledTitle imageSrc={imageSrc}><StyledText>{front}</StyledText></StyledTitle>
         <StyledContent>{back}</StyledContent>
-      </Wrapper>
-    </Card>
+      </StyledWrapper>
+    </StyledCard>
   );
 };
 FlippingCard.propTypes = {

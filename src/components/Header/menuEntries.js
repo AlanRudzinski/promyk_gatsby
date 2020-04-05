@@ -5,7 +5,7 @@ const {
 } = urls.urls;
 
 export default [
-  { text: 'O nas', link: about, color: 'red' },
+  { text: 'O nas', link: about },
   { text: 'ABC przedszkolaka', link: abc },
   { text: 'Oferta', link: activities },
   { text: 'Nasz dzien', link: schedule },

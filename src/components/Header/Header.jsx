@@ -30,7 +30,7 @@ const NavigationList = styled.ul`
     align-items: center;
     @media (max-width: 860px) {
       flex-direction: column;
-      background-color: #8FCAC2;
+      background-color: ${theme.color.secondary};
       position: fixed;
       height: 100vh;
       width: 100%;
@@ -44,7 +44,7 @@ const NavigationList = styled.ul`
 
 const Header = () => {
   const navItems = menuEntries
-    .map(({ text, link, color }) => <NavLink key={text} text={text} link={link} color={color} />);
+    .map(({ text, ...rest }) => <NavLink key={text} text={text} {...rest} />);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {

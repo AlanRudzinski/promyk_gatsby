@@ -9,7 +9,7 @@ import batman from './batman.jpg';
 import garden from './garden.jpg';
 import santa from './santa.jpg';
 
-const Content = styled.div`
+const StyledContent = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -22,7 +22,7 @@ const Content = styled.div`
   }
 `;
 
-const ContentImg = styled.img`
+const StyledContentImg = styled.img`
   height: 177px;
   width: 134px;
   @media(min-width: 850px) {
@@ -36,20 +36,21 @@ const ContentImg = styled.img`
   }
 `;
 
-const ContentText = styled.p`
+const StyledContentText = styled.p`
   display: inline-block;
   width: 60%;
   font-size: 14px;
+  color: black;
   font-family: 'Comic Neue', cursive;
 `;
 
-const Container = styled.div`
+const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const ImagesContainer = styled.div`
+const StyledImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,15 +59,15 @@ const ImagesContainer = styled.div`
 
 const Description = () => (
   <Section title={{ value: content.firstTitle }}>
-    <Container>
-      <Content>
-        <ContentImg
+    <StyledContainer>
+      <StyledContent>
+        <StyledContentImg
           src={turtle}
           alt="cute turtle"
         />
-        <ContentText>{content.firstContent}</ContentText>
-      </Content>
-      <ImagesContainer>
+        <StyledContentText>{content.firstContent}</StyledContentText>
+      </StyledContent>
+      <StyledImagesContainer>
         <FlippingCard
           imageSrc={garden}
           front={content.FirstCardTitle}
@@ -82,9 +83,9 @@ const Description = () => (
           front={content.ThirdCardTitle}
           back={content.ThirdCardContent}
         />
-      </ImagesContainer>
+      </StyledImagesContainer>
       <RedirectButton text="Zobacz pelna oferte..." destination="/about" />
-    </Container>
+    </StyledContainer>
   </Section>
 );
 

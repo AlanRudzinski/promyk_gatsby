@@ -4,33 +4,41 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-const StyledButton = styled.button`
-width: 311px;
-height: 47px;
+const StyledLink = styled(Link)`
+display: inline-flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+color: black;
+min-width: 311px;
+min-height: 47px;
+padding: 5px 10px;
 background-color: white;
-border: 1px solid ${props => props.color};
+cursor: pointer;
+border: 1px solid ${props => props.borderColor};
 &:hover {
-  background-color: ${props => props.color};
-  cursor: pointer;
+  background-color: ${props => props.fillColor};
 }
 `;
 
-const RedirectButton = ({ text, destination, color }) => (
-  <Link to={destination}>
-    <StyledButton type="submit" color={color}>
-      {text}
-    </StyledButton>
-  </Link>
+const RedirectButton = ({
+  text, destination, fillColor, borderColor,
+}) => (
+  <StyledLink to={destination} fillColor={fillColor} borderColor={borderColor}>
+    {text}
+  </StyledLink>
 );
 
 RedirectButton.propTypes = {
   text: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  color: PropTypes.string,
+  fillColor: PropTypes.string,
+  borderColor: theme.color.primary,
 };
 
 RedirectButton.defaultProps = {
-  color: theme.color.defaultButton,
+  fillColor: theme.color.secondary,
+  borderColor: theme.color.primary,
 };
 
 export default RedirectButton;
