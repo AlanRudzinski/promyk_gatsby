@@ -10,7 +10,7 @@ import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
     display: flex;
-    background-color: rgba(255,255,255,.95)
+    background-color: rgba(255,255,255,.95);
     justify-content: space-between;
     height: ${theme.layout.headerHeight};
     width: 100vw;
@@ -30,7 +30,7 @@ const NavigationList = styled.ul`
     align-items: center;
     @media (max-width: 860px) {
       flex-direction: column;
-      background-color: #8FCAC2;
+      background-color: ${theme.color.secondary};
       position: fixed;
       height: 100vh;
       width: 100%;
@@ -44,7 +44,7 @@ const NavigationList = styled.ul`
 
 const Header = () => {
   const navItems = menuEntries
-    .map(({ text, link }) => <NavLink key={text} text={text} link={link} />);
+    .map(({ text, ...rest }) => <NavLink key={text} text={text} {...rest} />);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {

@@ -1,5 +1,12 @@
 {
-  "title": "O nas",
-  "homePageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetr",
-  "heroDescription": "Promyk - to przedszkole, ktore daje dzieciom mozliwosc bycia badaczem, odkrywca i tworca."
+  "firstTitle": "Witamy w Promyku",
+  "firstContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue",
+  "secondTitle": "Nasz dzien",
+  "heroDescription": "Promyk - to przedszkole, ktore daje dzieciom mozliwosc bycia badaczem, odkrywca i tworca.",
+  "FirstCardTitle": "Zajecia w ogrodzie",
+  "SecondCardTitle": "Zajecia teatralne",
+  "ThirdCardTitle": "Imprezy",
+  "FirstCardContent": "Sadzimy kwiatki, kopiemy dziury, i inne takie bla bla bla bla",
+  "SecondCardContent": "Przebieramy sie za batmana i fajnie wtedy jest",
+  "ThirdCardContent": "Imprezka i przychodzi mikolaj wtedy"
 }

@@ -1,12 +1,10 @@
 export default {
   color: {
-    primary: 'tomato',
-    darkGreen: '#286D66',
-    red: '#FD2F14',
-    yellow: '#FFD203',
-    lightBlue: '#79CDDF',
-    pink: '#F770AF',
-    orange: '#FF8700',
+    primary: '#66B6BA',
+    secondary: '#FFF275',
+    orangePrim: '#FF8C42',
+    redPrim: '#FF3C38',
+    redSec: '#A23E48',
   },
   layout: {
     headerHeight: '75px',
