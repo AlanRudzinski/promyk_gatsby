@@ -4,7 +4,7 @@ import content from 'content/home.json';
 import Section from 'containers/Section';
 import RedirectButton from 'components/RedirectButton';
 import FlippingCard from 'components/FlippingCard';
-import turtle from './turtle.svg';
+import Turtle from 'images/turtle.svg';
 import batman from './batman.jpg';
 import garden from './garden.jpg';
 import santa from './santa.jpg';
@@ -22,7 +22,7 @@ const StyledContent = styled.div`
   }
 `;
 
-const StyledContentImg = styled.img`
+const StyledContentImg = styled(Turtle)`
   height: 177px;
   width: 134px;
   @media(min-width: 850px) {
@@ -61,10 +61,7 @@ const Description = () => (
   <Section title={{ value: content.firstTitle }}>
     <StyledContainer>
       <StyledContent>
-        <StyledContentImg
-          src={turtle}
-          alt="cute turtle"
-        />
+        <StyledContentImg />
         <StyledContentText>{content.firstContent}</StyledContentText>
       </StyledContent>
       <StyledImagesContainer>

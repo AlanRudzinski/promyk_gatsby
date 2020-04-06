@@ -15,9 +15,9 @@ min-height: 47px;
 padding: 5px 10px;
 background-color: white;
 cursor: pointer;
-border: 1px solid ${props => props.borderColor};
+border: 1px solid ${props => theme.color[props.borderColor]};
 &:hover {
-  background-color: ${props => props.fillColor};
+  background-color: ${props => theme.color[props.fillColor]};
 }
 `;
 
@@ -33,12 +33,12 @@ RedirectButton.propTypes = {
   text: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
   fillColor: PropTypes.string,
-  borderColor: theme.color.primary,
+  borderColor: PropTypes.string,
 };
 
 RedirectButton.defaultProps = {
-  fillColor: theme.color.secondary,
-  borderColor: theme.color.primary,
+  fillColor: 'secondary',
+  borderColor: 'primary',
 };
 
 export default RedirectButton;

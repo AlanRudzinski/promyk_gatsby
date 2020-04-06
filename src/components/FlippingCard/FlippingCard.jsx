@@ -21,9 +21,10 @@ const StyledCard = styled.article`
   height: 350px;
   margin: 1rem;
   perspective: 600px;
+  transition: ${props => (props.flipped ? '' : 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);')}
+  transform: ${props => (props.flipped ? 'scale(1.05);' : 'scale(1);')}
   &:hover {
     transform: ${props => (props.flipped ? 'scale(1);' : 'scale(1.05);')}
-    transition: ${props => (props.flipped ? '' : 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)')}
   }
   @media(min-width: 1250px) {
     margin: 3rem;
