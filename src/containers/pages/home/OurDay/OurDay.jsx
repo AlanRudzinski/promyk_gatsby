@@ -10,7 +10,6 @@ const Container = styled.div`
 const OurDay = () => (
   <Section title={{ value: content.title }}>
     <Container>
-      <img src="https://picsum.photos/300/400" alt="" />
       <span>{content.shortDescription}</span>
     </Container>
   </Section>

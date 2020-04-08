@@ -8,5 +8,6 @@
   "ThirdCardTitle": "Imprezy",
   "FirstCardContent": "Sadzimy kwiatki, kopiemy dziury, i inne takie bla bla bla bla",
   "SecondCardContent": "Przebieramy sie za batmana i fajnie wtedy jest",
-  "ThirdCardContent": "Imprezka i przychodzi mikolaj wtedy"
+  "ThirdCardContent": "Imprezka i przychodzi mikolaj wtedy",
+  "OurDayActivities": ["sniadanko", "zabawy", "spanie", "jedzonko", "jedzonko", "tance", "the end"]
 }
