@@ -26,10 +26,28 @@ const StyledDot = styled.span`
 
 
 const StyledComment = styled.p`
+display: inline-flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 100%;
+padding: 0;
+height: 45vh;
+@media(min-width: 360px) {
+  padding: 0 10px;
+  height: 45vh;
+}
+@media(min-width: 450px) {
+  padding: 0 50px;
+  height: 45vh;
+@media(min-width: 800px) {
+  height: 30vh;
+  padding: 0 100px;
+}
+@media(min-width: 1100px) {
   height: 25vh;
-  text-align: center;
-  width: 100%;
-  padding: 20px 150px 0px 150px;
+  padding: 0 150px;
+}
 `;
 
 const Comments = () => {
