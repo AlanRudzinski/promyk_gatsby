@@ -53,7 +53,7 @@ height: 45vh;
 const Comments = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   return (
-    <Section title={{ value: content.thirdTitle }}>
+    <Section title={{ value: content.commentSection.title }}>
       <Carousel
         autoplay={true}
         wrapAround={true}
@@ -64,9 +64,9 @@ const Comments = () => {
         slideIndex={slideIndex}
         afterSlide={newIndex => setSlideIndex(newIndex)}
       >
-        <StyledComment>{content.firstComment}</StyledComment>
-        <StyledComment>{content.secondComment}</StyledComment>
-        <StyledComment>{content.thirdComment}</StyledComment>
+        <StyledComment>{content.commentSection.firstComment}</StyledComment>
+        <StyledComment>{content.commentSection.secondComment}</StyledComment>
+        <StyledComment>{content.commentSection.thirdComment}</StyledComment>
       </Carousel>
       <StyledMultipleDots>
         <StyledDot onClick={() => setSlideIndex(0)} />

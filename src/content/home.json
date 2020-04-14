@@ -1,17 +1,28 @@
 {
-  "firstTitle": "Witamy w Promyku",
-  "firstContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue",
-  "secondTitle": "Nasz dzien",
-  "thirdTitle": "Co o nas pisza",
-  "heroDescription": "Promyk - to przedszkole, ktore daje dzieciom mozliwosc bycia badaczem, odkrywca i tworca.",
-  "FirstCardTitle": "Zajecia w ogrodzie",
-  "SecondCardTitle": "Zajecia teatralne",
-  "ThirdCardTitle": "Imprezy",
-  "FirstCardContent": "Sadzimy kwiatki, kopiemy dziury, i inne takie bla bla bla bla",
-  "SecondCardContent": "Przebieramy sie za batmana i fajnie wtedy jest",
-  "ThirdCardContent": "Imprezka i przychodzi mikolaj wtedy",
-  "OurDayActivities": ["sniadanko", "zabawy", "spanie", "jedzonko", "jedzonko", "tance", "the end"],
-  "firstComment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "secondComment": "Super przedszkole, wspaniała - rodzinna atmosfera. Bardzo miła Pani Dyrektor oraz Panie Przedszkolanki. Dzieci robią w ciągu roku dużo wspaniałych prac. Do tego trzeba dołożyć wspaniałe przedstawienia z udziałem samych dzieci na Boże Narodzenie, Wielkanoc, Dzień Matki i Ojca, Dzień Babci i Dziadka itd. Jednym słowem serdecznie polecam, bo z własnego doświadczenia wiem, (moje 3 dziecko uczęszcza do tego przedszkola), że warto oddać dziecko w dobre ręce :-)",
-  "thirdComment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto"
+  "hero": {
+    "description": "Promyk - to przedszkole, ktore daje dzieciom mozliwosc bycia badaczem, odkrywca i tworca."
+  },
+  "descriptionSection": {
+    "title": "Witamy w Promyku",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pharetra massa. Aliquam sit amet eros quis ex rhoncus auctor id sed felis. Maecenas pretium tellus augue",
+    "firstCardTitle": "Zajecia w ogrodzie",
+    "secondCardTitle": "Zajecia teatralne",
+    "thirdCardTitle": "Imprezy",
+    "firstCardContent": "Sadzimy kwiatki, kopiemy dziury, i inne takie bla bla bla bla",
+    "secondCardContent": "Przebieramy sie za batmana i fajnie wtedy jest",
+    "thirdCardContent": "Imprezka i przychodzi mikolaj wtedy"
+  },
+  "ourDaySection": {
+    "title": "Nasz dzien",
+    "activities": ["sniadanko", "zabawy", "spanie", "jedzonko", "jedzonko", "tance", "the end"]
+  },
+  "commentSection": {
+    "title": "Co o nas pisza",
+    "firstComment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "secondComment": "Super przedszkole, wspaniała - rodzinna atmosfera. Bardzo miła Pani Dyrektor oraz Panie Przedszkolanki. Dzieci robią w ciągu roku dużo wspaniałych prac. Do tego trzeba dołożyć wspaniałe przedstawienia z udziałem samych dzieci na Boże Narodzenie, Wielkanoc, Dzień Matki i Ojca, Dzień Babci i Dziadka itd. Jednym słowem serdecznie polecam, bo z własnego doświadczenia wiem, (moje 3 dziecko uczęszcza do tego przedszkola), że warto oddać dziecko w dobre ręce :-)",
+    "thirdComment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto"
+  },
+  "contactSection": {
+    "title": "Kontakt"
+  }
 }

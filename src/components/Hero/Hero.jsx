@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from 'styles/theme';
 import content from 'content/home.json';
-import smallImg from './hero_w_480.png';
-import mediumImg from './hero_w_1611.png';
-import largeImg from './hero_w_2387.png';
-import xlargeImg from './hero_w_3840.png';
 // daj tutaj calc(100vh - $navHeight)
 const HeroContainer = styled.section`
   height: calc(100vh - ${theme.layout.headerHeight});
@@ -16,19 +12,19 @@ const HeroContainer = styled.section`
   background-size: cover;
   text-align: center;
   @media (max-width: 480px) and (max-resolution: 192dpi) {
-    background-image: url(${smallImg});
+    background-image: url(/hero_w_480.png);
   }
   @media (max-width: 480px) and (min-resolution: 192dpi) {
-    background-image: url(${mediumImg});
+    background-image: url(/hero_w_1611.png);
   }
   @media (max-width: 1611px) {
-    background-image: url(${mediumImg});
+    background-image: url(/hero_w_2387.png);
   }
   @media (min-width: 1611px) {
-    background-image: url(${largeImg});
+    background-image: url(/hero_w_2387.png);
   }
   @media (min-width: 2387px) {
-    background-image: url(${xlargeImg});
+    background-image: url(/hero_w_3840.png';);
   }
 `;
 
@@ -58,7 +54,7 @@ const HeroText = styled.span`
 const Hero = () => (
   <HeroContainer>
     <HeroTextBox>
-      <HeroText>{content.heroDescription}</HeroText>
+      <HeroText>{content.hero.description}</HeroText>
     </HeroTextBox>
   </HeroContainer>
 );

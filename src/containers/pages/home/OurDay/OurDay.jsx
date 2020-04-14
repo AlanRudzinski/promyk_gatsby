@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
 import content from 'content/home.json';
@@ -32,11 +33,12 @@ const Container = styled.div`
 `;
 
 const OurDay = () => (
-  <Section title={{ value: content.secondTitle }}>
+  <Section title={{ value: content.ourDaySection.title }}>
     <Container>
       <StyledImg />
       <StyledList>
-        {content.OurDayActivities.map(a => <StyledListItem>{a}</StyledListItem>)}
+        {content.ourDaySection.activities.map((a, i) => (
+          <StyledListItem key={i}>{a}</StyledListItem>))}
       </StyledList>
     </Container>
   </Section>
