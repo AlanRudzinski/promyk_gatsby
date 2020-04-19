@@ -5,9 +5,7 @@ import Section from 'containers/Section';
 import RedirectButton from 'components/RedirectButton';
 import FlippingCard from 'components/FlippingCard';
 import Turtle from 'images/turtle.svg';
-import batman from './batman.jpg';
-import garden from './garden.jpg';
-import santa from './santa.jpg';
+
 
 const StyledContent = styled.div`
   display: flex;
@@ -58,27 +56,27 @@ const StyledImagesContainer = styled.div`
 `;
 
 const Description = () => (
-  <Section title={{ value: content.firstTitle }}>
+  <Section title={{ value: content.descriptionSection.title }}>
     <StyledContainer>
       <StyledContent>
         <StyledContentImg />
-        <StyledContentText>{content.firstContent}</StyledContentText>
+        <StyledContentText>{content.descriptionSection.content}</StyledContentText>
       </StyledContent>
       <StyledImagesContainer>
         <FlippingCard
-          imageSrc={garden}
-          front={content.FirstCardTitle}
-          back={content.FirstCardContent}
+          imageSrc="garden.jpg"
+          front={content.descriptionSection.firstCardTitle}
+          back={content.descriptionSection.firstCardContent}
         />
         <FlippingCard
-          imageSrc={batman}
-          front={content.SecondCardTitle}
-          back={content.SecondCardContent}
+          imageSrc="./batman.jpg"
+          front={content.descriptionSection.secondCardTitle}
+          back={content.descriptionSection.secondCardContent}
         />
         <FlippingCard
-          imageSrc={santa}
-          front={content.ThirdCardTitle}
-          back={content.ThirdCardContent}
+          imageSrc="/santa.jpg"
+          front={content.descriptionSection.thirdCardTitle}
+          back={content.descriptionSection.thirdCardContent}
         />
       </StyledImagesContainer>
       <RedirectButton text="Zobacz pelna oferte..." destination="/about" />
