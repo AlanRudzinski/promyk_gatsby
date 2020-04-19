@@ -23,6 +23,11 @@
     "thirdComment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto"
   },
   "contactSection": {
-    "title": "Kontakt"
-  }
+    "title": "Kontakt",
+    "email": "przedszkole@promyk.pl",
+    "telephone": "22 787 15 96",
+    "adress": "ul. Mazowiecka 17, 05-200 Wołomin",
+    "hours": ["06:00-17:00","06:00-17:00","06:00-17:00","06:00-17:00","06:00-17:00","nieczynne", "nieczynne"],
+    "days": ["poniedzialek", "wtorek", "sroda", "czwartek", "piatek", "sobota", "niedziela"]
+   }
 }
