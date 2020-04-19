@@ -18,6 +18,7 @@ const StyledDot = styled.span`
   width: 15px;
   border-radius: 50%;
   background-color: ${theme.color.secondary};
+  transition: 0.3s;
   cursor: pointer;
   &:hover {
     background-color: ${theme.color.primary};
@@ -35,11 +36,10 @@ padding: 0;
 height: 45vh;
 @media(min-width: 360px) {
   padding: 0 10px;
-  height: 45vh;
 }
 @media(min-width: 450px) {
   padding: 0 50px;
-  height: 45vh;
+}
 @media(min-width: 800px) {
   height: 30vh;
   padding: 0 100px;
@@ -64,14 +64,14 @@ const Comments = () => {
         slideIndex={slideIndex}
         afterSlide={newIndex => setSlideIndex(newIndex)}
       >
-        <StyledComment>{content.commentSection.firstComment}</StyledComment>
-        <StyledComment>{content.commentSection.secondComment}</StyledComment>
-        <StyledComment>{content.commentSection.thirdComment}</StyledComment>
+        {content.commentSection.comments.map(comment => (
+          <StyledComment>{comment}</StyledComment>
+        ))}
       </Carousel>
       <StyledMultipleDots>
-        <StyledDot onClick={() => setSlideIndex(0)} />
-        <StyledDot onClick={() => setSlideIndex(1)} />
-        <StyledDot onClick={() => setSlideIndex(2)} />
+        {content.commentSection.comments.map((comment, idx) => (
+          <StyledDot onClick={() => setSlideIndex(idx)} />
+        ))}
       </StyledMultipleDots>
     </Section>
   );

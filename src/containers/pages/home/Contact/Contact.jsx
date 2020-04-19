@@ -25,6 +25,7 @@ const StyledTextContainer = styled.div`
   margin-left: 0;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   @media(min-width: 500px){
     flex-direction: row;
@@ -52,6 +53,7 @@ const StyledHoursTitle = styled.h3`
 const StyledHoursList = styled.ul`
   list-style: none;
   margin: 0;
+  width: auto;
   @media(max-width: 500px){
     width: 70%;
     margin: 0 auto;
