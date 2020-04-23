@@ -7,11 +7,12 @@ import {
   Comments,
   Contact,
 } from 'containers/pages/home';
+import { graphql } from 'gatsby';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
-    <Hero />
+    <Hero {...data.datoCmsGeneral} />
     <Description />
     <OurDay />
     <Comments />
@@ -20,3 +21,11 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+export const query = graphql`
+    query indexPageQuery {
+        datoCmsGeneral {
+            motto
+        }
+    }
+`;

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styles/theme';
-import content from 'content/home.json';
-// daj tutaj calc(100vh - $navHeight)
+
 const HeroContainer = styled.section`
   height: calc(100vh - ${theme.layout.headerHeight});
   margin-top: ${theme.layout.headerHeight};
@@ -47,14 +46,14 @@ const HeroTextBox = styled.span`
   }
 `;
 
-const HeroText = styled.span`
+const HeroText = styled.div`
   display: inline-block;
   `;
 
-const Hero = () => (
+const Hero = ({ motto }) => (
   <HeroContainer>
     <HeroTextBox>
-      <HeroText>{content.hero.description}</HeroText>
+      <HeroText dangerouslySetInnerHTML={{ __html: motto }} />
     </HeroTextBox>
   </HeroContainer>
 );

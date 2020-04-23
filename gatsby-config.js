@@ -13,6 +13,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-source-datocms',
+      options: {
+        apiToken: 'd5d97e27fc8975c83f1edb83ac879e',
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src'),
