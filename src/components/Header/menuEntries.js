@@ -1,8 +1,8 @@
-import urls from 'pages/urls';
+import urls from 'config/urls';
 
 const {
   abc, about, activities, schedule, gallery, contact,
-} = urls.urls;
+} = urls;
 
 export default [
   { text: 'O nas', link: about },
