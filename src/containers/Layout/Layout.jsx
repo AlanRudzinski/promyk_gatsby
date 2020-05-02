@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,9 +38,7 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <footer>
-      cze
-    </footer>
+    <Footer />
   </ThemeProvider>
 );
 
