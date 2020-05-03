@@ -17,8 +17,8 @@ const StyledFooter = styled.div`
 const StyledContent = styled.div`
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  width: 75vw;
+  justify-content: space-between;
+  width: 65vw;
 `;
 
 const StyledTitle = styled.h3`
@@ -28,17 +28,19 @@ const StyledTitle = styled.h3`
 
 const StyledLocationIcon = styled(LocationIcon)`
   width: 21px;
-  margin-right: 15px;
+  position: absolute;
+  left: -30px;
 `;
-
 const StyledEmailIcon = styled(EmailIcon)`
   width: 21px;
-  margin-right: 15px;
+  position: absolute;
+  left: -30px;
 `;
 
 const StyledPhoneIcon = styled(PhoneIcon)`
   width: 21px;
-  margin-right: 15px;
+  position: absolute;
+  left: -30px; 
 `;
 
 const StyledContactInfo = styled.div`
@@ -66,6 +68,8 @@ const DisplayRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
+  margin-bottom: 10px;
 `;
 
 const Footer = () => (
