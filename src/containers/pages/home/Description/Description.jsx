@@ -39,7 +39,6 @@ const StyledContentText = styled.p`
   width: 60%;
   font-size: 14px;
   color: black;
-  font-family: 'Comic Neue', cursive;
 `;
 
 const StyledContainer = styled.div`

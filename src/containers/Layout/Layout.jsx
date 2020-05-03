@@ -17,9 +17,9 @@ import Footer from 'components/Footer';
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${theme.color.primary};
-    font-weight: normal;
-    font-stretch: normal;
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
   }
 `;
 
