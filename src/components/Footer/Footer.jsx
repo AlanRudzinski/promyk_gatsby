@@ -88,6 +88,7 @@ const StyledContactInfo = styled.div`
 const StyledBankInfo = styled.div`
   color: black;
   grid-column: 2;
+  justify-self: start;
   @media(min-width: 800px){
     grid-column: 3;
   }
@@ -97,6 +98,7 @@ const StyledInfo = styled.div`
   color: black;
   grid-column: 2;
   grid-row: 2;
+  justify-self: start;
   @media(min-width: 800px){
     grid-column: 3;
   }
