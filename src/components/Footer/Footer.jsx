@@ -144,9 +144,7 @@ const Footer = ({
         <StyledDisplayRow>
           <StyledPhoneIcon />
           <StyledDisplayColumn>
-            {phoneNums.map(obj => (
-              <span key={obj.num}>{obj.num}</span>
-            ))}
+            { phoneNums.map(({ num }) => <span key={num}>{num}</span>) }
           </StyledDisplayColumn>
         </StyledDisplayRow>
       </StyledContactInfo>
