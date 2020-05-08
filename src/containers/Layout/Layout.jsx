@@ -24,21 +24,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-const Layout = ({ children }) => (
-  // const data = useStaticQuery(graphql`
-  //     query SiteTitleQuery {
-  //         site {
-  //             siteMetadata {
-  //                 title
-  //             }
-  //         }
-  //     }
-  // `);
+const Layout = ({ children, dataCMS }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <Footer />
+    <Footer {...dataCMS} />
   </ThemeProvider>
 );
 

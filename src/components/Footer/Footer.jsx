@@ -4,7 +4,7 @@ import theme from 'styles/theme';
 import LocationIcon from 'images/LocationIcon.svg';
 import EmailIcon from 'images/EmailIcon.svg';
 import PhoneIcon from 'images/PhoneIcon.svg';
-import hexToRGBA from '../../utils/hexToRGBA';
+import hexToRGBA from 'utils/hexToRGBA';
 
 
 const StyledFooter = styled.footer`
@@ -121,7 +121,9 @@ const StyledDisplayRow = styled.div`
   margin-bottom: 10px;
 `;
 
-const Footer = () => (
+const Footer = ({
+  street, city, company, email, nip, bankNum, phoneNums,
+}) => (
   <StyledFooter>
     <StyledContent>
       <StyledContactInfo>
@@ -129,31 +131,39 @@ const Footer = () => (
         <StyledDisplayRow>
           <StyledLocationIcon />
           <StyledDisplayColumn>
-            <span>ul. Mazowiecka 17,</span>
-            <span>05-200 Wołomin</span>
+            <span>
+              { street }
+            </span>
+            <span>
+              { city }
+            </span>
           </StyledDisplayColumn>
         </StyledDisplayRow>
         <StyledDisplayRow>
           <StyledEmailIcon />
-          <span>promyk@gmail.com</span>
+          <span>{email}</span>
         </StyledDisplayRow>
         <StyledDisplayRow>
           <StyledPhoneIcon />
           <StyledDisplayColumn>
-            <span>602-241-179</span>
-            <span>666-550-604</span>
+            {phoneNums.map(obj => (
+              <span key={obj.num}>{obj.num}</span>
+            ))}
           </StyledDisplayColumn>
         </StyledDisplayRow>
       </StyledContactInfo>
       <StyledBankInfo>
         <StyledTitle>Numery Kont: </StyledTitle>
-        <span>31 1060 0076 0000 3260 0161 1598</span>
+        <span>{bankNum}</span>
       </StyledBankInfo>
       <StyledInfo>
         <StyledTitle>Informacje: </StyledTitle>
         <StyledDisplayColumn>
-          <span>Akademia Dziecięca Promyk</span>
-          <span>NIP 1250200628</span>
+          <span>{company}</span>
+          <span>
+            NIP
+            {nip}
+          </span>
         </StyledDisplayColumn>
       </StyledInfo>
     </StyledContent>

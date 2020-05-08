@@ -10,7 +10,7 @@ import {
 import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout dataCMS={data.datoCmsContact}>
     <Seo title="Home" />
     <Hero {...data.datoCmsGeneral} />
     <Description />
@@ -25,7 +25,18 @@ export default IndexPage;
 export const query = graphql`
     query indexPageQuery {
         datoCmsGeneral {
-            motto
+          motto
+        }
+        datoCmsContact {
+          street,
+          city
+          company
+          email
+          nip
+          bankNum
+          phoneNums {
+            num
+          }
         }
     }
 `;
