@@ -24,12 +24,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-const Layout = ({ children, dataCMS }) => (
+const Layout = ({ children, dataCMS, bgFooter }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <Footer {...dataCMS} />
+    <Footer {...dataCMS} bgFooter={bgFooter} />
   </ThemeProvider>
 );
 

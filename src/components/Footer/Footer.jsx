@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from 'styles/theme';
 import LocationIcon from 'images/LocationIcon.svg';
 import EmailIcon from 'images/EmailIcon.svg';
 import PhoneIcon from 'images/PhoneIcon.svg';
-import hexToRGBA from 'utils/hexToRGBA';
 
 
 const StyledFooter = styled.footer`
   height: 280px;
-  background-color: ${hexToRGBA(theme.color.primary, 0.5)};
+  background-color: ${props => props.bgFooter};
   font-size: 14px;
   padding: 20px;
   @media(min-width: 500px){
@@ -122,9 +120,9 @@ const StyledDisplayRow = styled.div`
 `;
 
 const Footer = ({
-  street, city, company, email, nip, bankNum, phoneNums,
+  street, city, company, email, nip, bankNum, phoneNums, bgFooter,
 }) => (
-  <StyledFooter>
+  <StyledFooter bgFooter={bgFooter}>
     <StyledContent>
       <StyledContactInfo>
         <StyledTitle>Kontakt: </StyledTitle>
