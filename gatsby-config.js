@@ -31,6 +31,7 @@ module.exports = {
         pages: path.join(__dirname, 'src/pages'),
         styles: path.join(__dirname, 'src/styles'),
         config: path.join(__dirname, 'src/config'),
+        utils: path.join(__dirname, 'src/utils'),
       },
     },
     {
@@ -59,6 +60,27 @@ module.exports = {
       options: {
         rule: {
           include: /images/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Roboto',
+            variants: ['100', '300', '400'],
+            subsets: ['latin-ext'],
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Irregularis'],
+          urls: ['/fonts/fonts.css'],
         },
       },
     },

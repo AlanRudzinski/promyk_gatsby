@@ -11,34 +11,25 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${theme.color.primary};
-    font-weight: normal;
-    font-stretch: normal;
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
   }
 `;
 
 
-const Layout = ({ children }) => (
-  // const data = useStaticQuery(graphql`
-  //     query SiteTitleQuery {
-  //         site {
-  //             siteMetadata {
-  //                 title
-  //             }
-  //         }
-  //     }
-  // `);
+const Layout = ({ children, dataCMS, bgFooter }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <footer>
-      cze
-    </footer>
+    <Footer {...dataCMS} bgFooter={bgFooter} />
   </ThemeProvider>
 );
 

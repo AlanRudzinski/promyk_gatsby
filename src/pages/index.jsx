@@ -7,10 +7,12 @@ import {
   Comments,
   Contact,
 } from 'containers/pages/home';
+import theme from 'styles/theme';
+import hexToRGBA from 'utils/hexToRGBA';
 import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA(theme.color.primary, 0.5)}>
     <Seo title="Home" />
     <Hero {...data.datoCmsGeneral} />
     <Description />
@@ -25,7 +27,18 @@ export default IndexPage;
 export const query = graphql`
     query indexPageQuery {
         datoCmsGeneral {
-            motto
+          motto
+        }
+        datoCmsContact {
+          street,
+          city
+          company
+          email
+          nip
+          bankNum
+          phoneNums {
+            num
+          }
         }
     }
 `;
