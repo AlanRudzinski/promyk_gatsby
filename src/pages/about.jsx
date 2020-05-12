@@ -2,13 +2,36 @@ import React from 'react';
 
 import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
+import { graphql } from 'gatsby';
+import hexToRGBA from 'utils/hexToRGBA';
+import PageHeading from 'containers/PageHeading';
+import AboutDescription from 'components/AboutDescription';
 
-const SecondPage = () => (
-  <Layout>
+const SecondPage = ({ data }) => (
+  <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#76B5D2', 0.5)}>
     <Seo title="O nas" />
-    <h1>O nas</h1>
-
+    <PageHeading title="O nas" />
+    <AboutDescription description={data.datoCmsGeneral.description} />
   </Layout>
 );
 
 export default SecondPage;
+
+export const query = graphql`
+    query aboutPageQuery {
+      datoCmsGeneral {
+        description
+      }
+      datoCmsContact {
+        street
+        city
+        company
+        email
+        nip
+        bankNum
+        phoneNums {
+          num
+        }
+      }
+    }
+`;

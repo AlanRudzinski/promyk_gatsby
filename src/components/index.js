@@ -1,4 +1,5 @@
 /* eslint-disable import/no-duplicates */
+import AboutDescription from './AboutDescription';
 import FlippingCard from './FlippingCard';
 import Footer from './Footer';
 import HamburgerButton from './HamburgerButton';
@@ -13,6 +14,7 @@ import RedirectButton from './RedirectButton';
 import Seo from './Seo';
 
 export {
+  AboutDescription,
   FlippingCard,
   Footer,
   HamburgerButton,
