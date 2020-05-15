@@ -6,12 +6,14 @@ import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
 import PageHeading from 'containers/PageHeading';
 import AboutDescription from 'components/AboutDescription';
+import CrewSection from 'components/CrewSection';
 
 const SecondPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#76B5D2', 0.5)}>
     <Seo title="O nas" />
     <PageHeading title="O nas" />
     <AboutDescription description={data.datoCmsGeneral.description} />
+    <CrewSection />
   </Layout>
 );
 
