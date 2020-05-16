@@ -22,6 +22,15 @@ const StyledFirstOrangeFlower = styled(FirstOrangeFlower)`
   top: -170px;
   left: 50px;
   z-index: -1;
+  @media (min-width: 1720px){
+    left: 140px;
+  }
+  @media (min-width: 2280px){
+    left: 200px;
+  }
+  @media (min-width: 2410px){
+    left: 350px;
+  }
 `;
 
 const StyledSecondOrangeFlower = styled(SecondOrangeFlower)`
@@ -42,18 +51,21 @@ const StyledSecondOrangeFlower = styled(SecondOrangeFlower)`
     right: -50px;
     bottom: -380px;
   }
+  @media (min-width: 1834px){
+    height: 365px;
+    width: 160px;
+    bottom: -290px;
+  }
 `;
 
 
-const CrewSection = () => (
+const CrewSection = ({ crew }) => (
   <StyledContainer>
     <StyledFirstOrangeFlower />
     <StyledSecondOrangeFlower />
-    <CrewMember name="Elzbieta Perzanowska" />
-    <CrewMember name="Sylwia Podpirka" />
-    <CrewMember name="Agata Ziółkowska" />
-    <CrewMember name="Dagmara Kocik" />
-    <CrewMember name="Honorata Perzanowska" />
+    {crew.crew.map(person => (
+      <CrewMember name={person.name} description={person.description} />
+    ))}
   </StyledContainer>
 );
 

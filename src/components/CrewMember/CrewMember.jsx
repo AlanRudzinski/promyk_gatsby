@@ -28,16 +28,12 @@ const StyledDescription = styled.p`
   font-size: 14px;
 `;
 
-const CrewMember = ({ name }) => (
+const CrewMember = ({ name, description }) => (
   <StyledContainer>
     <StyledPortrait src="https://picsum.photos/250/250" />
     <StyledName>{name}</StyledName>
     <StyledDescription>
-      Pomysłodawca, założyciel oraz właściciel Szkoły Pływania MORE OF LIFE.
-      Instruktor Pływania z wieloletnim doświadczeniem w pracy z dziećmi.
-      Certyfikowany Organizator Obozów Sportowo-Rekreacyjnych dla
-      Dzieci i Młodzieży. Kierownik wycieczek, wychowawca kolonijny,
-      żeglarz, sternik motorowodny, Ratownik WOPR.
+      {description}
     </StyledDescription>
   </StyledContainer>
 );

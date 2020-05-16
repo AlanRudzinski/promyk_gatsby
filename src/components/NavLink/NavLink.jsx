@@ -5,20 +5,20 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 const StyledNavLi = styled.li`
-height: 41px;
-padding-left: 1rem;
-padding-right: 1rem;
+  height: 41px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 const StyledNavLink = styled(Link)`
-text-decoration: none;
-display: block;
-color: ${props => props.color};
-line-height: 41px;
-white-space: nowrap;
-&:hover {
-  opacity: 0.7;
-}
+  text-decoration: none;
+  display: block;
+  color: ${props => props.color};
+  line-height: 41px;
+  white-space: nowrap;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const NavLink = ({ text, link, color }) => (

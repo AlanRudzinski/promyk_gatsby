@@ -15,6 +15,10 @@ const StyledTitle = styled.h1`
   font-size: 4rem;
   text-align: center;
   color: black;
+  @media(min-width: 1500px) {
+    font-size: 6rem;
+  }
+
 `;
 
 const PageHeading = ({ title }) => (

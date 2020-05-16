@@ -13,7 +13,7 @@ const SecondPage = ({ data }) => (
     <Seo title="O nas" />
     <PageHeading title="O nas" />
     <AboutDescription description={data.datoCmsGeneral.description} />
-    <CrewSection />
+    <CrewSection crew={data.datoCmsCrew} />
   </Layout>
 );
 
@@ -23,6 +23,12 @@ export const query = graphql`
     query aboutPageQuery {
       datoCmsGeneral {
         description
+      }
+      datoCmsCrew {
+        crew {
+          name
+          description
+        }
       }
       datoCmsContact {
         street

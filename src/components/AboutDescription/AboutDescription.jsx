@@ -18,6 +18,7 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 300px;
 `;
 
 const StyledDescriptionText = styled.div`
@@ -40,6 +41,12 @@ const StyledFirstBlueFlower = styled(FirstBlueFlower)`
     height: 252px;
     width: 209px;
     top: -245px;
+    left: 0;
+  }
+  @media (min-width: 1800px){
+    height: 377px;
+    width: 310px;
+    top: -365px;
     left: 0;
   }
 `;
@@ -70,6 +77,13 @@ const StyledThirdBlueFlower = styled(ThirdBlueFlower)`
   @media (min-width: 850px){
     display: inline-block;
   }
+  @media (min-width: 1800px){
+    height: 270px;
+    width: 225px;
+    top: -260px;
+    right: 50px;
+    display: inline-block;
+  }
 `;
 
 const StyledFishes = styled(Fishes)`
@@ -95,7 +109,5 @@ const AboutDescription = ({ description }) => (
     <StyledDescriptionText dangerouslySetInnerHTML={{ __html: description }} />
   </StyledContainer>
 );
-
-// AboutDescription.propTypes = {};
 
 export default AboutDescription;
