@@ -28,9 +28,9 @@ const StyledDescription = styled.p`
   font-size: 14px;
 `;
 
-const CrewMember = ({ name, description }) => (
+const CrewMember = ({ name, description, imageSrc }) => (
   <StyledContainer>
-    <StyledPortrait src="https://picsum.photos/250/250" />
+    <StyledPortrait src={imageSrc} />
     <StyledName>{name}</StyledName>
     <StyledDescription>
       {description}

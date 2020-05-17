@@ -20,26 +20,29 @@ const SecondPage = ({ data }) => (
 export default SecondPage;
 
 export const query = graphql`
-    query aboutPageQuery {
-      datoCmsGeneral {
+  query aboutPageQuery {
+    datoCmsGeneral {
+      description
+    }
+    datoCmsCrew {
+      crew {
+        name
         description
-      }
-      datoCmsCrew {
-        crew {
-          name
-          description
-        }
-      }
-      datoCmsContact {
-        street
-        city
-        company
-        email
-        nip
-        bankNum
-        phoneNums {
-          num
+        image {
+          url
         }
       }
     }
+    datoCmsContact {
+      street
+      city
+      company
+      email
+      nip
+      bankNum
+      phoneNums {
+        num
+      }
+    }
+  }
 `;

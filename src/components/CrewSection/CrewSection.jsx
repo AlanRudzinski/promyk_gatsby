@@ -64,7 +64,7 @@ const CrewSection = ({ crew }) => (
     <StyledFirstOrangeFlower />
     <StyledSecondOrangeFlower />
     {crew.crew.map(person => (
-      <CrewMember name={person.name} description={person.description} />
+      <CrewMember name={person.name} description={person.description} imageSrc={person.image.url} />
     ))}
   </StyledContainer>
 );
