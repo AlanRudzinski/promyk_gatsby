@@ -1,4 +1,7 @@
 /* eslint-disable import/no-duplicates */
+import AboutDescription from './AboutDescription';
+import CrewMember from './CrewMember';
+import CrewSection from './CrewSection';
 import FlippingCard from './FlippingCard';
 import Footer from './Footer';
 import HamburgerButton from './HamburgerButton';
@@ -13,6 +16,9 @@ import RedirectButton from './RedirectButton';
 import Seo from './Seo';
 
 export {
+  AboutDescription,
+  CrewMember,
+  CrewSection,
   FlippingCard,
   Footer,
   HamburgerButton,
