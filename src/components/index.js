@@ -1,5 +1,8 @@
 /* eslint-disable import/no-duplicates */
 import AboutDescription from './AboutDescription';
+import ActivitiesContent from './ActivitiesContent';
+import ActivitiesDescription from './ActivitiesDescription';
+import Activity from './Activity';
 import CrewMember from './CrewMember';
 import CrewSection from './CrewSection';
 import FlippingCard from './FlippingCard';
@@ -17,6 +20,9 @@ import Seo from './Seo';
 
 export {
   AboutDescription,
+  ActivitiesContent,
+  ActivitiesDescription,
+  Activity,
   CrewMember,
   CrewSection,
   FlippingCard,
