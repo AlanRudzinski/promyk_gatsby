@@ -11,20 +11,24 @@ const StyledPicture = styled.div`
   height: 150px;
   margin: 20px;
   flex-shrink: 0;
+  background-color: tomato;
 `;
 
 const StyledDescription = styled.p`
   color: black;
   margin: auto 0;
+  font-size: 12px;
   text-align: ${props => (props.side ? 'right' : 'left')};
+  @media(min-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const StyledContainer = styled.div`
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  width: 70%;
   flex-direction: ${props => (props.side ? 'row-reverse' : 'row')};
+  margin-bottom: 40px;
 `;
 
 const Activity = ({ side, description }) => (

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 const StyledContainer = styled.div`
-  height: calc(60vh - ${theme.layout.headerHeight});
+  height: calc(55vh - ${theme.layout.headerHeight});
   margin-top: ${theme.layout.headerHeight};
   width: 100%;
   padding-top: 15vh;
