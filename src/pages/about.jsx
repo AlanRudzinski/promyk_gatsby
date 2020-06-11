@@ -5,8 +5,8 @@ import Layout from 'containers/Layout';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
 import PageHeading from 'containers/PageHeading';
-import AboutDescription from 'components/AboutDescription';
-import CrewSection from 'components/CrewSection';
+import AboutDescription from 'components/uniqueComponents/AboutDescription';
+import CrewSection from 'components/uniqueComponents/CrewSection';
 
 const AboutPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#76B5D2', 0.5)}>

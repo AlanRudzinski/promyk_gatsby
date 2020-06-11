@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
@@ -38,6 +38,9 @@ const Activity = ({ side, description }) => (
   </StyledContainer>
 );
 
-// Activity.propTypes = {};
+Activity.propTypes = {
+  side: PropTypes.bool.isRequired,
+  description: PropTypes.string,
+};
 
 export default Activity;

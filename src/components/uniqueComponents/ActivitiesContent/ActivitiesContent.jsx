@@ -2,7 +2,7 @@ import React from 'react';
 import Activity from 'components/Activity';
 import styled from 'styled-components';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
   margin: 100px auto;
@@ -28,6 +28,9 @@ const ActivitiesContent = ({ dataCMS }) => (
   </StyledContainer>
 );
 
-// ActivitiesContent.propTypes = {};
+ActivitiesContent.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  dataCMS: PropTypes.array,
+};
 
 export default ActivitiesContent;

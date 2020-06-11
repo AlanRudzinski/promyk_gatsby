@@ -3,8 +3,8 @@ import Layout from 'containers/Layout';
 import PageHeading from 'containers/PageHeading';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
-import ActivitiesDescription from 'components/ActivitiesDescription';
-import ActivitiesContent from 'components/ActivitiesContent';
+import ActivitiesDescription from 'components/uniqueComponents/ActivitiesDescription';
+import ActivitiesContent from 'components/uniqueComponents/ActivitiesContent';
 import styled from 'styled-components';
 
 import FooterSquid from 'images/group168.svg';

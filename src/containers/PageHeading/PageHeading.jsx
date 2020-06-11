@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
 const StyledTitle = styled.h1`
   font-family: 'Irregularis';
   font-size: 4rem;
+  font-weight: normal;
   text-align: center;
   color: black;
   @media(min-width: 1500px) {
