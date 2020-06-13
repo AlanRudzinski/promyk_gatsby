@@ -1,3 +1,5 @@
+/* eslint-disable quote-props */
+/* eslint-disable comma-dangle */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -20,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
+    overflow-x: hidden;
   }
 `;
 
@@ -35,6 +38,7 @@ const Layout = ({ children, dataCMS, bgFooter }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  bgFooter: PropTypes.string,
 };
 
 export default Layout;
