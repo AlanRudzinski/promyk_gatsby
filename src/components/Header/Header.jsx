@@ -25,6 +25,7 @@ const Logo = styled.div`
 
 const NavigationList = styled.ul`
     display: flex;
+    font: 22px Irregularis;
     list-style: none;
     height: 100%;
     align-items: center;
