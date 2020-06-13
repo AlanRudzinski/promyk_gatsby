@@ -7,11 +7,15 @@ import styled from 'styled-components';
 const StyledPicture = styled.div`
   border-radius: 50%;
   border: black 1px solid;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 20px;
   flex-shrink: 0;
   background-color: tomato;
+  @media(min-width: 500px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const StyledDescription = styled.p`
