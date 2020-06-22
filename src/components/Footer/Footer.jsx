@@ -6,23 +6,27 @@ import PhoneIcon from 'images/PhoneIcon.svg';
 
 
 const StyledFooter = styled.footer`
-  height: 280px;
+  height: auto;
   background-color: ${props => props.bgFooter};
   font-size: 14px;
-  padding: 20px;
-  @media(min-width: 500px){
-    padding: 50px; 
-    height: 320px;
-  }
+  padding: 70px 20px;
 `;
 
 const StyledContent = styled.div`
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px 20px;
-  justify-items: center;
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+  align-items: flex-start;
+  @media(min-width: 600px){
+    width: auto;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
   @media(min-width: 800px){
     grid-template-columns: 1fr 2fr 2fr 1fr;
   }
@@ -33,7 +37,7 @@ const StyledContent = styled.div`
 
 const StyledTitle = styled.h3`
   font-size: 16px;
-  margin-bottom: 30px;
+  margin: 15px 0;
 `;
 
 const StyledLocationIcon = styled(LocationIcon)`
@@ -75,9 +79,11 @@ const StyledContactInfo = styled.div`
   color: black;
   display: flex;
   flex-direction: column;
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  @media(min-width: 600px){
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
   @media(min-width: 800px){
     grid-column: 2;
   }
@@ -85,8 +91,10 @@ const StyledContactInfo = styled.div`
 
 const StyledBankInfo = styled.div`
   color: black;
-  grid-column: 2;
-  justify-self: start;
+  @media(min-width: 600px){
+    justify-self: start;
+    grid-column: 2;
+  }
   @media(min-width: 800px){
     grid-column: 3;
   }
@@ -94,9 +102,11 @@ const StyledBankInfo = styled.div`
 
 const StyledInfo = styled.div`
   color: black;
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: start;
+  @media(min-width: 600px){
+    justify-self: start;
+    grid-column: 2;
+    grid-row: 2;
+  }
   @media(min-width: 800px){
     grid-column: 3;
   }
