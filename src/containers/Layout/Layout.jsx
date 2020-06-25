@@ -1,3 +1,5 @@
+/* eslint-disable quote-props */
+/* eslint-disable comma-dangle */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -40,6 +42,7 @@ const Layout = ({ children, dataCMS, bgFooter }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  bgFooter: PropTypes.string,
 };
 
 export default Layout;

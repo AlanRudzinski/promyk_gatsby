@@ -176,4 +176,21 @@ const Footer = ({
   </StyledFooter>
 );
 
+
+Footer.defaultProps = {
+  bgFooter: 'red',
+  phoneNums: [
+    {
+      id: '4679791',
+    },
+    {
+      id: '4679792',
+    },
+  ],
+  bankNum: '31 1060 0076 0000 3260 0161 1598',
+  city: '05-200 Wolomin',
+  company: 'Akademia Dziecięca Promyk',
+  email: 'promyk@gmail.com',
+};
+
 export default Footer;
