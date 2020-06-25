@@ -1,7 +1,10 @@
 /* eslint-disable import/no-duplicates */
-import AboutDescription from './AboutDescription';
+import AboutDescription from './uniqueComponents/AboutDescription';
+import ActivitiesContent from './uniqueComponents/ActivitiesContent';
+import ActivitiesDescription from './uniqueComponents/ActivitiesDescription';
+import Activity from './Activity';
 import CrewMember from './CrewMember';
-import CrewSection from './CrewSection';
+import CrewSection from './uniqueComponents/CrewSection';
 import FlippingCard from './FlippingCard';
 import Footer from './Footer';
 import HamburgerButton from './HamburgerButton';
@@ -17,6 +20,9 @@ import Seo from './Seo';
 
 export {
   AboutDescription,
+  ActivitiesContent,
+  ActivitiesDescription,
+  Activity,
   CrewMember,
   CrewSection,
   FlippingCard,

@@ -5,10 +5,10 @@ import Layout from 'containers/Layout';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
 import PageHeading from 'containers/PageHeading';
-import AboutDescription from 'components/AboutDescription';
-import CrewSection from 'components/CrewSection';
+import AboutDescription from 'components/uniqueComponents/AboutDescription';
+import CrewSection from 'components/uniqueComponents/CrewSection';
 
-const SecondPage = ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#76B5D2', 0.5)}>
     <Seo title="O nas" />
     <PageHeading title="O nas" />
@@ -17,7 +17,7 @@ const SecondPage = ({ data }) => (
   </Layout>
 );
 
-export default SecondPage;
+export default AboutPage;
 
 export const query = graphql`
   query aboutPageQuery {
