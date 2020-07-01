@@ -1,16 +1,32 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
-import Seo from 'components/Seo';
+import { graphql } from 'gatsby';
+import hexToRGBA from 'utils/hexToRGBA';
+import PageHeading from 'containers/PageHeading';
+import ScheduleDescription from 'components/uniqueComponents/ScheduleDescription';
+// import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+const schedulePage = ({ data }) => (
+  <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#DA647C', 0.5)}>
+    <PageHeading title="Nasz dzien" />
+    <ScheduleDescription />
   </Layout>
 );
 
-export default SecondPage;
+export default schedulePage;
+
+export const query = graphql`
+  query schedulePageQuery {
+    datoCmsContact {
+      street
+      city
+      company
+      email
+      nip
+      bankNum
+      phoneNums {
+        num
+      }
+    }
+  }
+`;
