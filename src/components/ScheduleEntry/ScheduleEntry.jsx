@@ -47,14 +47,14 @@ const StyledLineBot = styled.div`
     height: 100px;
   }
 `;
-
+// todo: vertical-align description to label
 const StyledEntryDescription = styled.p`
   grid-column: 2;
   grid-row: 2;
   color: black;
   font-size: 12px;
   padding-left: 10px;
-  max-height: 70px;
+  margin: 0;
   @media (min-width: 650px) {
     font-size: 14px;
   }
