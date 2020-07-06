@@ -1,10 +1,6 @@
 /* eslint-disable import/no-duplicates */
-import AboutDescription from './uniqueComponents/AboutDescription';
-import ActivitiesContent from './uniqueComponents/ActivitiesContent';
-import ActivitiesDescription from './uniqueComponents/ActivitiesDescription';
 import Activity from './Activity';
 import CrewMember from './CrewMember';
-import CrewSection from './uniqueComponents/CrewSection';
 import FlippingCard from './FlippingCard';
 import Footer from './Footer';
 import HamburgerButton from './HamburgerButton';
@@ -16,15 +12,18 @@ import Image from './Image';
 import LogoImg from './LogoImg';
 import NavLink from './NavLink';
 import RedirectButton from './RedirectButton';
+import ScheduleEntry from './ScheduleEntry';
 import Seo from './Seo';
+import AboutDescription from './uniqueComponents/AboutDescription';
+import ActivitiesContent from './uniqueComponents/ActivitiesContent';
+import ActivitiesDescription from './uniqueComponents/ActivitiesDescription';
+import CrewSection from './uniqueComponents/CrewSection';
+import ScheduleContent from './uniqueComponents/ScheduleContent';
+import ScheduleDescription from './uniqueComponents/ScheduleDescription';
 
 export {
-  AboutDescription,
-  ActivitiesContent,
-  ActivitiesDescription,
   Activity,
   CrewMember,
-  CrewSection,
   FlippingCard,
   Footer,
   HamburgerButton,
@@ -36,5 +35,12 @@ export {
   LogoImg,
   NavLink,
   RedirectButton,
+  ScheduleEntry,
   Seo,
+  AboutDescription,
+  ActivitiesContent,
+  ActivitiesDescription,
+  CrewSection,
+  ScheduleContent,
+  ScheduleDescription,
 };
