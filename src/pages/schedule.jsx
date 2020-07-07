@@ -7,6 +7,8 @@ import ScheduleContent from 'components/uniqueComponents/ScheduleContent';
 // import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 
+
+// todo: podpiac datoCMS
 const schedulePage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#DA647C', 0.5)}>
     <PageHeading title="Nasz dzien" />
