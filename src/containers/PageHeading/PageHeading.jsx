@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 const StyledContainer = styled.div`
-  height: calc(60vh - ${theme.layout.headerHeight});
+  height: calc(45vh - ${theme.layout.headerHeight});
   margin-top: ${theme.layout.headerHeight};
   width: 100%;
   padding-top: 15vh;
@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
 const StyledTitle = styled.h1`
   font-family: 'Irregularis';
   font-size: 4rem;
+  font-weight: normal;
   text-align: center;
   color: black;
   @media(min-width: 1500px) {
