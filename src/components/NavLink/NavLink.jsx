@@ -26,7 +26,7 @@ const NavLink = ({ text, link, color }) => (
 );
 NavLink.propTypes = {
   text: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   color: PropTypes.string,
 };
 
