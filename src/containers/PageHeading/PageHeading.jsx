@@ -8,6 +8,7 @@ const StyledContainer = styled.div`
   margin-top: ${theme.layout.headerHeight};
   width: 100%;
   padding-top: 15vh;
+  min-height: 300px;
 `;
 
 const StyledTitle = styled.h1`

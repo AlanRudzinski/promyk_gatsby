@@ -22,12 +22,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    overflow-x: hidden;
   };
 
-  main {
-    overflow-x: hidden;
-  }
 `;
 
 
