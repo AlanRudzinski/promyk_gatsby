@@ -1,16 +1,35 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
+import { graphql } from 'gatsby';
+import hexToRGBA from 'utils/hexToRGBA';
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-);
+const ContactPage = ({ data }) => {
+  const bgGradient = {
+    color1: hexToRGBA('#FFFFFF', 0.5),
+    color2: hexToRGBA('#60ABCC', 0.5),
+  };
+  return (
+    <Layout dataCMS={data.datoCmsContact} bgGradient={bgGradient}>
+      <Seo title="Kontakt" />
+    </Layout>
+  );
+};
 
-export default SecondPage;
+export default ContactPage;
+
+export const query = graphql`
+  query contactPageQuery {
+    datoCmsContact {
+      street
+      city
+      company
+      email
+      nip
+      bankNum
+      phoneNums {
+        num
+      }
+    }
+  }`;

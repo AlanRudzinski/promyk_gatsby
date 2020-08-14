@@ -8,6 +8,7 @@ import PhoneIcon from 'images/PhoneIcon.svg';
 const StyledFooter = styled.footer`
   height: auto;
   background-color: ${props => props.bgFooter};
+  ${props => (props.bgGradient ? `background: linear-gradient(${props.bgGradient.color1} 50%, ${props.bgGradient.color2})` : '')};
   font-size: 14px;
   padding: 70px 20px;
   position: relative;
@@ -132,9 +133,9 @@ const StyledDisplayRow = styled.div`
 `;
 
 const Footer = ({
-  street, city, company, email, nip, bankNum, phoneNums, bgFooter,
+  street, city, company, email, nip, bankNum, phoneNums, bgFooter, bgGradient,
 }) => (
-  <StyledFooter bgFooter={bgFooter}>
+  <StyledFooter bgFooter={bgFooter} bgGradient={bgGradient}>
     <StyledContent>
       <StyledContactInfo>
         <StyledTitle>Kontakt: </StyledTitle>
@@ -180,7 +181,6 @@ const Footer = ({
 
 
 Footer.defaultProps = {
-  bgFooter: 'red',
   phoneNums: [
     {
       id: '4679791',
