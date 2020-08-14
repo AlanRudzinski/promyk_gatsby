@@ -10,6 +10,8 @@ const StyledFooter = styled.footer`
   background-color: ${props => props.bgFooter};
   font-size: 14px;
   padding: 70px 20px;
+  position: relative;
+  z-index: -1;
 `;
 
 const StyledContent = styled.div`
