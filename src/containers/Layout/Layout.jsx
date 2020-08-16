@@ -28,13 +28,13 @@ const GlobalStyle = createGlobalStyle`
 
 
 const Layout = ({
-  children, dataCMS, bgFooter, bgGradient,
+  children, dataCMS, bgFooter, bgGradient, bubbles
 }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <Footer {...dataCMS} bgFooter={bgFooter} bgGradient={bgGradient} />
+    <Footer {...dataCMS} bgFooter={bgFooter} bgGradient={bgGradient} bubbles={bubbles} />
   </ThemeProvider>
 );
 

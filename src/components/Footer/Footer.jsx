@@ -3,24 +3,29 @@ import styled from 'styled-components';
 import LocationIcon from 'images/LocationIcon.svg';
 import EmailIcon from 'images/EmailIcon.svg';
 import PhoneIcon from 'images/PhoneIcon.svg';
+import multipleBubblesFilled from 'images/multipleBubblesFilled.svg';
+import multipleBubblesEmpty from 'images/multipleBubblesEmpty.svg';
 
 
 const StyledFooter = styled.footer`
   height: auto;
   background-color: ${props => props.bgFooter};
-  ${props => (props.bgGradient ? `background: linear-gradient(${props.bgGradient.color1} 50%, ${props.bgGradient.color2})` : '')};
+  ${props => (props.bgGradient ? `background: linear-gradient(${props.bgGradient.color1} 40%, ${props.bgGradient.color2})` : '')};
   font-size: 14px;
   padding: 70px 20px;
   position: relative;
   z-index: -1;
+  overflow-x: hidden;
 `;
 
 const StyledContent = styled.div`
-  margin: 0 auto;
+  ${props => (props.bubbles ? 'margin: 180px auto 0;' : 'margin: 0 auto;')}
   display: flex;
   width: 150px;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  z-index: 10;
   @media(min-width: 600px){
     width: auto;
     align-items: center;
@@ -132,11 +137,27 @@ const StyledDisplayRow = styled.div`
   margin-bottom: 10px;
 `;
 
+const StyledMultipleBubblesFilled = styled(multipleBubblesFilled)`
+  position: absolute;
+  height: 260px;
+  top: 70px;
+  left: -100px;
+`;
+
+const StyledMultipleBubblesEmpty = styled(multipleBubblesEmpty)`
+  position: absolute;
+  height: 260px;
+  top: 0;
+  left: 0;
+`;
+
 const Footer = ({
-  street, city, company, email, nip, bankNum, phoneNums, bgFooter, bgGradient,
+  street, city, company, email, nip, bankNum, phoneNums, bgFooter, bgGradient, bubbles,
 }) => (
   <StyledFooter bgFooter={bgFooter} bgGradient={bgGradient}>
-    <StyledContent>
+    { bubbles ? <StyledMultipleBubblesFilled /> : null}
+    { bubbles ? <StyledMultipleBubblesEmpty /> : null}
+    <StyledContent bubbles={bubbles}>
       <StyledContactInfo>
         <StyledTitle>Kontakt: </StyledTitle>
         <StyledDisplayRow>

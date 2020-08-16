@@ -100,7 +100,7 @@ const StyledFishes = styled(Fishes)`
   }
   `;
 
-const Contact = ({ withTitle }) => (
+const Contact = ({ withTitle, fishes }) => (
   <Section title={withTitle ? { value: content.contactSection.title } : undefined}>
     <StyledContainer>
       <StyledTextContainer>
@@ -120,7 +120,7 @@ const Contact = ({ withTitle }) => (
         </StyledHoursList>
       </StyledTextContainer>
       <StyledMap src="map.png" alt="" />
-      <StyledFishes />
+      {fishes ? <StyledFishes /> : null}
     </StyledContainer>
   </Section>
 );
