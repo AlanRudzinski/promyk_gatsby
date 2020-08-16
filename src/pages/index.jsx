@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => (
     <Description />
     <OurDay />
     <Comments />
-    <Contact />
+    <Contact withTitle />
   </Layout>
 );
 

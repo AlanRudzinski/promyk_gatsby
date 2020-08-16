@@ -12,15 +12,12 @@ const StyledHeading = styled(Heading)`
   text-align: center;
 `;
 
-const Section = ({ children, title }) => {
-  const { value, level } = title;
-  return (
-    <section>
-      {title && <StyledHeading level={level}>{value}</StyledHeading>}
-      {children}
-    </section>
-  );
-};
+const Section = ({ children, title }) => (
+  <section>
+    {title && <StyledHeading level={title.level}>{title.value}</StyledHeading>}
+    {children}
+  </section>
+);
 
 Section.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
@@ -29,5 +26,6 @@ Section.propTypes = {
     level: PropTypes.number,
   }),
 };
+
 
 export default Section;

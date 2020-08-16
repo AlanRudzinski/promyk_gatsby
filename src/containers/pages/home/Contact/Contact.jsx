@@ -100,8 +100,8 @@ const StyledFishes = styled(Fishes)`
   }
   `;
 
-const Contact = () => (
-  <Section title={{ value: content.contactSection.title }}>
+const Contact = ({ withTitle }) => (
+  <Section title={withTitle ? { value: content.contactSection.title } : undefined}>
     <StyledContainer>
       <StyledTextContainer>
         <StyledContact>
