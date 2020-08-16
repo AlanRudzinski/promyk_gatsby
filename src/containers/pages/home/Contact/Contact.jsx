@@ -12,7 +12,7 @@ const StyledDayAndHour = styled.li`
 const StyledContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   @media(min-width: 1040px) {
@@ -21,18 +21,20 @@ const StyledContainer = styled.div`
 `;
 
 const StyledTextContainer = styled.div`
+  color: black;
   display: flex;
-  margin-left: 0;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: auto;
+  min-width: 400px;
   @media(min-width: 500px){
     flex-direction: row;
+    width: 100%;
   }
   @media(min-width: 1040px){
     flex-direction: column;
-    margin-left: 5vw;
+    width: auto;
   }
 `;
 
@@ -61,19 +63,14 @@ const StyledHoursList = styled.ul`
 `;
 
 const StyledMap = styled.img`
-  width: 240px;
-  height: 156px;
-  margin: 70px auto;
-  @media(min-width: 398px){
-    width: 398px;
-    height: 262px;
-  }
-  @media(min-width: 670px){
-    width: 664px;
-    height: 436px;
-  }
-  @media(min-width: 1040px){
-    margin-left: 5vw;
+  width: auto;
+  height: 180px;
+  margin: 0;
+  @media(min-width: 580px){
+    height: 280px;
+  };
+  @media(min-width: 580px){
+    height: 380px;
   }
   `;
 
@@ -86,10 +83,8 @@ const StyledFishes = styled(Fishes)`
   @media(min-width: 500px){
     right: 50px;
     top: 260px;
-    width: 120px;
-    height: 80px;
   }
-  @media(min-width: 670px){
+  @media(min-width: 580px){
     width: 200px;
     height: 150px;
     right: 15px;
@@ -97,11 +92,18 @@ const StyledFishes = styled(Fishes)`
   }
   @media(min-width: 1040px){
     top: -10px;
+    right: 50px;
   }
   `;
 
-const Contact = ({ withTitle, fishes }) => (
-  <Section title={withTitle ? { value: content.contactSection.title } : undefined}>
+const Contact = ({
+  withTitle, fishes, marginTop, marginBot,
+}) => (
+  <Section
+    title={withTitle ? { value: content.contactSection.title } : undefined}
+    marginBot={marginBot}
+    marginTop={marginTop}
+  >
     <StyledContainer>
       <StyledTextContainer>
         <StyledContact>

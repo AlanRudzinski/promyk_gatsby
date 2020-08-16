@@ -12,11 +12,18 @@ const StyledHeading = styled(Heading)`
   text-align: center;
 `;
 
-const Section = ({ children, title }) => (
-  <section>
+const StyledSection = styled.section`
+  ${props => (props.marginTop ? `margin-top: ${props.marginTop}px;` : '')}
+  ${props => (props.marginBot ? `margin-bottom: ${props.marginBot}px;` : '')}
+`;
+
+const Section = ({
+  children, title, marginTop, marginBot,
+}) => (
+  <StyledSection marginTop={marginTop} marginBot={marginBot}>
     {title && <StyledHeading level={title.level}>{title.value}</StyledHeading>}
     {children}
-  </section>
+  </StyledSection>
 );
 
 Section.propTypes = {

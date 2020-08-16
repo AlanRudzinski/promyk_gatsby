@@ -4,6 +4,7 @@ import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
+import useWindowWidth from 'utils/hooks';
 import PageHeading from 'containers/PageHeading';
 import { Contact } from 'containers/pages/home';
 import bubblesRight from 'images/bubblesRight.svg';
@@ -12,29 +13,56 @@ import fishLeft from 'images/fishLeft.svg';
 
 import styled from 'styled-components';
 
+const StyledContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
 
 const StyledBubblesRight = styled(bubblesRight)`
   height: 360px;
   position: absolute;
-  top: 50px;
+  top: -340px;
+  right: -60px;
+  @media(min-width: 600px) {
   right: 30px;
+  }
+`;
+
+const StyledBubblesRightSecond = styled(bubblesRight)`
+  height: 160px;
+  widht: auto;
+  position absolute;
+  bottom: -240px;
+  right: 380px;
+  display: none;
+  @media(min-width: 500px) {
+    display: block
+  }
 `;
 
 
 const StyledFishRight = styled(fishRight)`
   position: absolute;
-  height: 120px
+  height: 120px;
   width: auto;
-  bottom: -550px;
-  right: 400px;
+  bottom: -500px;
+  right: 420px;
+  display: none;
+  @media(min-width: 670px) {
+    display: block;
+  }
 `;
 
 const StyledFishRightSecond = styled(fishRight)`
   position: absolute;
   height: 80px;
   width: auto;
-  bottom: -450px;
-  right: 450px;
+  bottom: -370px;
+  right: 500px;
+  display: none;
+  @media(min-width: 670px) {
+    display: block;  
+  }
 `;
 
 const StyledFishLeft = styled(fishLeft)`
@@ -42,7 +70,11 @@ const StyledFishLeft = styled(fishLeft)`
   height: 260px;
   width: auto;
   right: 180px;
-  bottom -520px;
+  bottom: -450px;
+  display: none;
+  @media(min-width: 500px) {
+    display: block
+  }
 `;
 
 const ContactPage = ({ data }) => {
@@ -50,16 +82,19 @@ const ContactPage = ({ data }) => {
     color1: hexToRGBA('#FFFFFF', 0.5),
     color2: hexToRGBA('#60ABCC', 0.5),
   };
-
+  const width = useWindowWidth();
   return (
     <Layout dataCMS={data.datoCmsContact} bgGradient={bgGradient} bubbles>
       <Seo title="Kontakt" />
       <PageHeading title="Kontakt" />
-      <StyledBubblesRight />
-      <Contact />
-      <StyledFishRight />
-      <StyledFishRightSecond />
-      <StyledFishLeft />
+      <StyledContainer>
+        <StyledBubblesRight />
+        <Contact marginBot={width > 500 ? 300 : 0} />
+        <StyledFishRight />
+        <StyledFishRightSecond />
+        <StyledFishLeft />
+        <StyledBubblesRightSecond />
+      </StyledContainer>
     </Layout>
   );
 };
