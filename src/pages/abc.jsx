@@ -1,16 +1,40 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import PageHeading from 'containers/PageHeading';
+import AbcDescription from 'components/uniqueComponents/AbcDescription';
+import { graphql } from 'gatsby';
+import hexToRGBA from 'utils/hexToRGBA';
 
-import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+const abcPage = ({ data }) => (
+  <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#F48300', 0.5)}>
+    <PageHeading title="ABC przedszkolaka" />
+    <AbcDescription dataCMS={data.datoCmsAbc} />
   </Layout>
 );
 
-export default SecondPage;
+export default abcPage;
+
+export const query = graphql`
+  query abcPageQuery {
+    datoCmsContact {
+      street
+      city
+      company
+      email
+      nip
+      bankNum
+      phoneNums {
+        num
+      }
+    }
+    datoCmsAbc {
+      entry {
+        color {
+          hex
+        }
+        text
+      }
+    }
+  }
+`;

@@ -22,21 +22,19 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    overflow-x: hidden;
   };
 
-  main {
-    overflow-x: hidden;
-  }
 `;
 
 
-const Layout = ({ children, dataCMS, bgFooter }) => (
+const Layout = ({
+  children, dataCMS, bgFooter, bgGradient, bubbles
+}) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Header />
     <main>{children}</main>
-    <Footer {...dataCMS} bgFooter={bgFooter} />
+    <Footer {...dataCMS} bgFooter={bgFooter} bgGradient={bgGradient} bubbles={bubbles} />
   </ThemeProvider>
 );
 

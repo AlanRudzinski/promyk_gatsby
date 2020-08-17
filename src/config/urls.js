@@ -7,4 +7,5 @@ export default {
   gallery: '/gallery',
   index: '/',
   schedule: '/schedule',
+  news: '/news',
 };
