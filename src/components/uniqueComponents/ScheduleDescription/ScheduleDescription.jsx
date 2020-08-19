@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const StyledWaves = styled(Waves)`
@@ -55,7 +56,7 @@ const StyledText = styled.span`
   width: 70%;
   color: black;
   weight: bold;
-  z-index: 100;
+  z-index: 10;
   text-align: center;
 `;
 

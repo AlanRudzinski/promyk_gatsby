@@ -17,11 +17,13 @@ import Footer from 'components/Footer';
 
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  html, body {
     color: ${theme.color.primary};
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
+    max-width: 100%;
+    overflow-x: hidden;
   };
 
 `;

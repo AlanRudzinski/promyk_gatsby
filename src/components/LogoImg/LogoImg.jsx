@@ -1,27 +1,16 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Logo from 'images/logo.svg';
+import styled from 'styled-components';
 
+const StyledLogo = styled(Logo)`
+  height: 150px;
+  width: auto;
+  margin: 20px;
+  transition: .7s;
+  ${props => (props.scrollY > 50 ? 'transform: scale(0.4) translateY(-140px) translateX(-220px);' : '')}
+  `;
 
-const LogoImg = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: {eq: "promyk_logo.png"}) {
-        id
-        childImageSharp {
-          fixed(width: 70) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-  return (
-    <Img
-      fixed={data.image.childImageSharp.fixed}
-      alt="Logo Akademi dzieciecej Promyk"
-    />
-  );
-};
-
+const LogoImg = ({ scrollY }) => (
+  <StyledLogo scrollY={scrollY} />
+);
 export default LogoImg;

@@ -4,7 +4,7 @@ import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
-import useWindowWidth from 'utils/hooks';
+import { useWindowWidth } from 'utils/hooks';
 import PageHeading from 'containers/PageHeading';
 import { Contact } from 'containers/pages/home';
 import bubblesRight from 'images/bubblesRight.svg';

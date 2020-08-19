@@ -45,6 +45,10 @@ const StyledBotWave = styled(smallWaves)`
   width: 210px;
   bottom: -220px;
   right: -250px;
+  display: none;
+@media(min-width: 1050px) {
+  display: block;
+}
 `;
 
 const ScheduleContent = () => (
