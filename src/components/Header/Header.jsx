@@ -6,6 +6,7 @@ import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import theme from 'styles/theme';
+import { useScrollY } from 'utils/hooks';
 import menuEntries from './menuEntries';
 
 const StyledHeader = styled.header`
@@ -17,10 +18,25 @@ const StyledHeader = styled.header`
     top: 0;
     position: fixed;
     z-index: 100;
+
 `;
 
 const Logo = styled.div`
-    margin-left: 2rem;
+  margin-left: 2rem;
+  position: relative;
+`;
+
+const StyledLogoName = styled.span`
+  display: block;
+  height: ${theme.layout.headerHeight};
+  color: black;
+  font-size: 20px;
+  line-height: ${theme.layout.headerHeight};
+  position: absolute;
+  top: 0;
+  left: 50px;
+  ${props => (props.scrollY > 50 ? 'opacity: 1;' : 'opacity: 0;')}
+  ${props => (props.scrollY > 50 ? 'transition: opacity .4s ease-in;transition-delay: .2s;' : 'transition: opacity .1s ease-out; transition-delay: 0s;')}
 `;
 
 const NavigationList = styled.ul`
@@ -33,11 +49,10 @@ const NavigationList = styled.ul`
       flex-direction: column;
       background-color: ${theme.color.secondary};
       position: fixed;
-      height: 100vh;
+      height: 100%;
       width: 100%;
       margin-left: 0;
-      overflow: hidden;
-      scroll: no;
+      overflow: clip;
       justify-content: space-evenly;
       ${props => (props.menuOpen ? 'display: flex;' : 'display: none')};
     }
@@ -59,11 +74,16 @@ const Header = () => {
     } return () => enableBodyScroll(document.body);
   }, [menuOpen]);
 
+  const y = useScrollY();
+
   return (
     <StyledHeader>
       <Logo>
         <Link to="/">
-          <LogoImg />
+          <LogoImg scrollY={y} />
+          <StyledLogoName scrollY={y}>
+            P R O M Y K
+          </StyledLogoName>
         </Link>
       </Logo>
       <NavigationList menuOpen={menuOpen}>
