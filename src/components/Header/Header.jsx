@@ -36,8 +36,7 @@ const StyledLogoName = styled.span`
   top: 0;
   left: 50px;
   ${props => (props.scrollY > 50 ? 'opacity: 1;' : 'opacity: 0;')}
-  transition: opacity .5s ease-in;
-  transition-delay: .3s;
+  ${props => (props.scrollY > 50 ? 'transition: opacity .4s ease-in;transition-delay: .2s;' : 'transition: opacity .1s ease-out; transition-delay: 0s;')}
 `;
 
 const NavigationList = styled.ul`
@@ -82,10 +81,10 @@ const Header = () => {
       <Logo>
         <Link to="/">
           <LogoImg scrollY={y} />
+          <StyledLogoName scrollY={y}>
+            P R O M Y K
+          </StyledLogoName>
         </Link>
-        <StyledLogoName scrollY={y}>
-          P R O M Y K
-        </StyledLogoName>
       </Logo>
       <NavigationList menuOpen={menuOpen}>
         {navItems}
