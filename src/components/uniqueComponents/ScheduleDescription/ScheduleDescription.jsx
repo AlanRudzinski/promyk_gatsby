@@ -13,7 +13,6 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 `;
 
 const StyledWaves = styled(Waves)`
