@@ -16,11 +16,11 @@ const StyledContainer = styled.div`
 `;
 
 const StyledContent = styled.div`
+  ${props => (`margin: ${props.topMargin}px 0 250px;`)}
   padding: 50px 0;
   width: 80%;
   display: flex;
   flex-direction: column;
-  margin: 100px 0 250px;
   position: relative;
   @media (min-width: 860px){
     width: 50%;
@@ -38,6 +38,7 @@ const StyledTopWave = styled(smallWaves)`
   position: absolute;
   width: 190px;
   left: -300px;
+  ${props => (props.waves ? 'display: block;' : 'display: none;')}
 `;
 
 const StyledBotWave = styled(smallWaves)`
@@ -45,13 +46,17 @@ const StyledBotWave = styled(smallWaves)`
   width: 210px;
   bottom: -220px;
   right: -250px;
+  display: none;
+@media(min-width: 1050px) {
+  ${props => (props.waves ? 'display: block;' : '')}
+}
 `;
 
-const ScheduleContent = () => (
+const ScheduleContent = ({ waves, topMargin }) => (
   <StyledContainer>
-    <StyledContent>
-      <StyledTopWave />
-      <StyledBotWave />
+    <StyledContent topMargin={topMargin}>
+      <StyledTopWave waves={waves} />
+      <StyledBotWave waves={waves} />
       <ScheduleEntry boxText="Powitanie: " boxHour="7:00" botDot botDotDescription="Przygotowanie do śniadania: 9:00 -9:30 Dzieci myją raczki i uczestniczą w przygotowaniu posiłku- rozkładają talerzyki, sztućce." />
       <ScheduleEntry boxText="Sniadanie: " boxHour="9:30" topLine />
       <ScheduleEntry boxText="Edukacja: " boxHour="10:00" />

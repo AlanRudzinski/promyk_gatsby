@@ -13,7 +13,7 @@ const schedulePage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#DA647C', 0.5)}>
     <PageHeading title="Nasz dzien" />
     <ScheduleDescription />
-    <ScheduleContent />
+    <ScheduleContent waves topMargin={100} />
   </Layout>
 );
 

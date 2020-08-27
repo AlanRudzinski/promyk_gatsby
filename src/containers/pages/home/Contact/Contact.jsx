@@ -27,7 +27,8 @@ const StyledTextContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: auto;
-  min-width: 400px;
+  min-width: 350px;
+  margin-bottom: 50px;
   @media(min-width: 500px){
     flex-direction: row;
     width: 100%;
@@ -114,7 +115,8 @@ const Contact = ({
         <StyledHoursList>
           <StyledHoursTitle>Godziny otwarcia</StyledHoursTitle>
           {content.contactSection.hours.map((a, i) => (
-            <StyledDayAndHour>
+            // eslint-disable-next-line react/no-array-index-key
+            <StyledDayAndHour key={i}>
               <span>{content.contactSection.days[i]}</span>
               <span>{a}</span>
             </StyledDayAndHour>

@@ -11,7 +11,7 @@ import GalleryContent from 'components/uniqueComponents/GalleryContent';
 const GalleryPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#8FCAC2', 0.5)}>
     <PageHeading title="Galeria" />
-    <GalleryContent pics={data.datoCmsGallery.pics} title={data.datoCmsGallery.title} />
+    <GalleryContent />
   </Layout>
 );
 
@@ -29,12 +29,6 @@ export const query = graphql`
       phoneNums {
         num
       }
-    }
-    datoCmsGallery {
-      pics {
-        url
-      }
-      title
     }
   }
 `;

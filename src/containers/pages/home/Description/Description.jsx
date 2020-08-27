@@ -68,12 +68,12 @@ const Description = () => (
           back={content.descriptionSection.firstCardContent}
         />
         <FlippingCard
-          imageSrc="./batman.jpg"
+          imageSrc="batman.jpg"
           front={content.descriptionSection.secondCardTitle}
           back={content.descriptionSection.secondCardContent}
         />
         <FlippingCard
-          imageSrc="/santa.jpg"
+          imageSrc="santa.jpg"
           front={content.descriptionSection.thirdCardTitle}
           back={content.descriptionSection.thirdCardContent}
         />

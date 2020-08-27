@@ -1,34 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styles/theme';
+import { graphql, StaticQuery } from 'gatsby';
 
-const HeroContainer = styled.section`
+import BackgroundImage from 'gatsby-background-image';
+
+// eslint-disable-next-line no-unused-vars
+const StyledBackgroundImage = styled(BackgroundImage)`
   height: calc(100vh - ${theme.layout.headerHeight});
   margin-top: ${theme.layout.headerHeight};
   z-index: 1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
-  @media (max-width: 480px) and (max-resolution: 192dpi) {
-    background-image: url(/hero_w_480.png);
-  }
-  @media (max-width: 480px) and (min-resolution: 192dpi) {
-    background-image: url(/hero_w_1611.png);
-  }
-  @media (max-width: 1611px) {
-    background-image: url(/hero_w_2387.png);
-  }
-  @media (min-width: 1611px) {
-    background-image: url(/hero_w_2387.png);
-  }
-  @media (min-width: 2387px) {
-    background-image: url(/hero_w_3840.png';);
-  }
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
 `;
 
 const HeroTextBox = styled.span`
-    background-color: rgba(255,255,255,.8);
+    background-color: white;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
     color: black;
     display: inline-flex;
     margin-top: 45vh;
@@ -51,11 +42,28 @@ const HeroText = styled.div`
   `;
 
 const Hero = ({ motto }) => (
-  <HeroContainer>
-    <HeroTextBox>
-      <HeroText dangerouslySetInnerHTML={{ __html: motto }} />
-    </HeroTextBox>
-  </HeroContainer>
+  <StaticQuery
+    query={graphql`
+    query {
+      heroImage: file(relativePath: { eq: "krolik.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 3500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `}
+    render={data => (
+      <StyledBackgroundImage
+        fluid={data.heroImage.childImageSharp.fluid}
+      >
+        <HeroTextBox>
+          <HeroText dangerouslySetInnerHTML={{ __html: motto }} />
+        </HeroTextBox>
+      </StyledBackgroundImage>
+    )}
+  />
 );
 
 

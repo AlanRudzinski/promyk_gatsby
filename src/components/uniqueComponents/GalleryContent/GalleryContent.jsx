@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
 import turtle from 'images/turtle.svg';
 import bubblesRight from 'images/bubblesRight.svg';
 import filledBubblesLeft from 'images/filledBubblesLeft.svg';
 import filledBubblesRight from 'images/filledBubblesRight.svg';
+import LightboxComponent from 'components/LightBox';
+// eslint-disable-next-line no-unused-vars
+import Img from 'gatsby-image';
 
 
 // import PropTypes from 'prop-types';
 
 // todo: ustalic w jakis sposob ma wygladac powiekszanie zdjec, ile max zdj, optymalizacja
+
+const randomRotate = () => {
+  const a = Math.floor(Math.random() * 12) - 6;
+  console.log(a);
+  return a;
+};
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -29,17 +39,38 @@ const StyledTitle = styled.h3`
   }
 `;
 
-const StyledPlaceholder = styled.div`
-  width: 280px;
-  height: 220px;
-  border: 2px solid #707070;
-  margin: 40px 0px;
-  cursor: pointer;
+// eslint-disable-next-line no-unused-vars
+const StyledImg = styled(Img)`
+  height: 100%;
+  width: 100%;
   background-color: lightgrey;
-  background-image: url(${props => props.imageSrc});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+`;
+
+const StyledImageButton = styled.button`
+  margin: 20px 20px;
+  width: 250px;
+  height: 250px;
+  flex-grow: 1;
+  cursor: pointer;
+  border: none;
+  background: white;
+  z-index: 10;
+  
+  padding: 15px 15px 40px;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.35);
+  &:focus {
+    border: none;
+    outline: none;
+  }
+  transform:  scale(1, 1) rotate(0deg);
+  transition: all 0.35s;
+  &:hover {
+    transform: scale(1.07, 1.07) rotate(${({ rotate }) => rotate}deg) !important;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.3);
+  }
 `;
 
 const StyledImagesContainer = styled.div`
@@ -92,22 +123,64 @@ const StyledFilledBubblesRight = styled(filledBubblesRight)`
   left: 280px;
 `;
 
-const GalleryContent = ({ pics, title }) => (
-  <StyledContainer>
-    <StyledTitle>
-      {title}
-    </StyledTitle>
-    <StyledImagesContainer>
-      <StyledTurtle />
-      <StyledBubbles size="200" posleft="-54" postop="-20" />
-      <StyledBubbles size="600" posright="240" postop="310" />
-      <StyledBubbles size="800" posright="-60" postop="360" />
-      <StyledFilledBubblesLeft />
-      <StyledFilledBubblesRight />
-      {pics.map(({ url }) => <StyledPlaceholder key={url} imageSrc={url} />)}
-    </StyledImagesContainer>
-  </StyledContainer>
-);
+const GalleryContent = ({ title }) => {
+  const { allDatoCmsGallery } = useStaticQuery(graphql`
+  query MyQuery {
+    allDatoCmsGallery {
+      edges {
+        node {
+          id
+          pics {
+            fluid(maxWidth: 250, maxHeight: 220) {
+              src
+            }
+          }
+        }
+      }
+    }
+  }
+  `);
+
+  const [lightBoxOpen, setLightBoxOpen] = useState(false);
+  const [lightBoxIndex, setLightBoxIndex] = useState(0);
+
+  const closeLightBox = () => setLightBoxOpen(false);
+  const openLightBox = (index) => {
+    setLightBoxIndex(index);
+    setLightBoxOpen(true);
+  };
+
+  const fluidImages = useMemo(() => allDatoCmsGallery.edges[0].node.pics, [allDatoCmsGallery]);
+
+  return (
+    <StyledContainer>
+      <StyledTitle>
+        {title}
+      </StyledTitle>
+      <LightboxComponent
+        isOpen={lightBoxOpen}
+        onClose={closeLightBox}
+        index={lightBoxIndex}
+        images={fluidImages.map(({ fluid }) => fluid.src)}
+      />
+      <StyledImagesContainer>
+        <StyledTurtle />
+        <StyledBubbles size="200" posleft="-54" postop="-20" />
+        <StyledBubbles size="600" posright="240" postop="310" />
+        <StyledBubbles size="800" posright="-60" postop="360" />
+        <StyledFilledBubblesLeft />
+        <StyledFilledBubblesRight />
+        {fluidImages.map(({ fluid }, index) => (
+          <StyledImageButton type="button" onClick={() => openLightBox(index)} rotate={randomRotate()}>
+            <StyledImg fluid={fluid} />
+          </StyledImageButton>
+        ))}
+        )
+      </StyledImagesContainer>
+    </StyledContainer>
+  );
+};
+//       {pics.map(({ url }) => <StyledPlaceholder key={url} imageSrc={url} />)}
 
 // GalleryContent.propTypes = {};
 
