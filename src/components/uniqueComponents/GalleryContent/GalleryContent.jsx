@@ -4,6 +4,9 @@ import turtle from 'images/turtle.svg';
 import bubblesRight from 'images/bubblesRight.svg';
 import filledBubblesLeft from 'images/filledBubblesLeft.svg';
 import filledBubblesRight from 'images/filledBubblesRight.svg';
+// eslint-disable-next-line no-unused-vars
+import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
 
 // import PropTypes from 'prop-types';
@@ -29,6 +32,7 @@ const StyledTitle = styled.h3`
   }
 `;
 
+// eslint-disable-next-line no-unused-vars
 const StyledPlaceholder = styled.div`
   width: 280px;
   height: 220px;
@@ -36,7 +40,6 @@ const StyledPlaceholder = styled.div`
   margin: 40px 0px;
   cursor: pointer;
   background-color: lightgrey;
-  background-image: url(${props => props.imageSrc});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -92,22 +95,48 @@ const StyledFilledBubblesRight = styled(filledBubblesRight)`
   left: 280px;
 `;
 
-const GalleryContent = ({ pics, title }) => (
-  <StyledContainer>
-    <StyledTitle>
-      {title}
-    </StyledTitle>
-    <StyledImagesContainer>
-      <StyledTurtle />
-      <StyledBubbles size="200" posleft="-54" postop="-20" />
-      <StyledBubbles size="600" posright="240" postop="310" />
-      <StyledBubbles size="800" posright="-60" postop="360" />
-      <StyledFilledBubblesLeft />
-      <StyledFilledBubblesRight />
-      {pics.map(({ url }) => <StyledPlaceholder key={url} imageSrc={url} />)}
-    </StyledImagesContainer>
-  </StyledContainer>
-);
+const GalleryContent = ({ title }) => {
+  const data = useStaticQuery(graphql`
+  query MyQuery {
+    allDatoCmsGallery {
+      edges {
+        node {
+          id
+          pics {
+            fluid(maxWidth: 250, maxHeight: 220) {
+              src
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  `);
+
+  return (
+    <StyledContainer>
+      <StyledTitle>
+        {title}
+      </StyledTitle>
+      <StyledImagesContainer>
+        <StyledTurtle />
+        <StyledBubbles size="200" posleft="-54" postop="-20" />
+        <StyledBubbles size="600" posright="240" postop="310" />
+        <StyledBubbles size="800" posright="-60" postop="360" />
+        <StyledFilledBubblesLeft />
+        <StyledFilledBubblesRight />
+        {data.allDatoCmsGallery.edges.node.map((a) => (
+          <Img fluid={a.pics}>
+            {console.log(a.pics)}
+          </Img>
+        ))}
+        )
+      </StyledImagesContainer>
+    </StyledContainer>
+  );
+};
+//       {pics.map(({ url }) => <StyledPlaceholder key={url} imageSrc={url} />)}
 
 // GalleryContent.propTypes = {};
 
