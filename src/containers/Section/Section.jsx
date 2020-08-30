@@ -10,11 +10,13 @@ const StyledHeading = styled(Heading)`
   font-family: 'Irregularis';
   width: 70%;
   text-align: center;
+  color: black;
 `;
 
 const StyledSection = styled.section`
   ${props => (props.marginTop ? `margin-top: ${props.marginTop}px;` : '')}
   ${props => (props.marginBot ? `margin-bottom: ${props.marginBot}px;` : '')}
+  color: black;
 `;
 
 const Section = ({

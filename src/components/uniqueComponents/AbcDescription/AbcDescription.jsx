@@ -12,9 +12,11 @@ const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 280px;
+  margin-top: -55px;
+  margin-left: -40px;
+  margin-bottom: 220px;
   overflow-y: visible;
+  position: relative;
 `;
 
 const StyledEntries = styled.ul`
@@ -33,18 +35,20 @@ const StyledRabbit = styled(rabbit)`
 
 const StyledSearchingRabbit = styled(searchingRabbit)`
   position: absolute;
-  height: 367px;
-  bottom: -310px;
-  right: 0;
+  height: 250px;
+  width: auto;
+  bottom: -250px;
+  right: 120px;
 `;
 
 const AbcDescription = ({ dataCMS }) => (
   <StyledContainer>
     <StyledEntries>
       <StyledRabbit />
-      <StyledSearchingRabbit />
-      {dataCMS.entry.map(e => <AbcEntry text={e.text} dotColor={e.color.hex} />)}
+      {dataCMS.entry.map(e => (
+        <AbcEntry text={e.text} dotColor={e.color.hex} lowerText={e.lowerText} />))}
     </StyledEntries>
+    <StyledSearchingRabbit />
   </StyledContainer>
 );
 
