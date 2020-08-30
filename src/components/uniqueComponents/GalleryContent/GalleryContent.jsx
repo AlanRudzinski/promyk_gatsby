@@ -16,7 +16,6 @@ import Img from 'gatsby-image';
 
 const randomRotate = () => {
   const a = Math.floor(Math.random() * 12) - 6;
-  console.log(a);
   return a;
 };
 
