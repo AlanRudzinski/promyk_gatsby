@@ -14,15 +14,18 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100%;
   background-size: cover;
   background-position: top center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr
 `;
 
 const HeroTextBox = styled.span`
+    grid-row: 3;
+    justify-self: center;
     background-color: white;
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
     color: black;
     display: inline-flex;
-    margin-top: 45vh;
     align-items: center;
     width: 100%;
     height: 170px;
