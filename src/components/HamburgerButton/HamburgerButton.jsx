@@ -25,7 +25,7 @@ const Hamburger = styled.button`
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
-  @media (min-width: 860px) {
+  @media (min-width: 1001px) {
     display: none;
   }
 `;

@@ -9,6 +9,8 @@ import Fishes from 'images/fishes.svg';
 
 // import PropTypes from 'prop-types';
 
+const baseFirstFlowerHeight = '130px';
+
 const StyledContainer = styled.div`
   width: 100%;
   padding: 50px 0;
@@ -33,29 +35,24 @@ const StyledDescriptionText = styled.div`
 
 const StyledFirstBlueFlower = styled(FirstBlueFlower)`
   position: absolute;
-  height: 189px;
-  width: 157px;
-  top: -185px;
-  left: 0;
+  height: ${baseFirstFlowerHeight};
+  width: auto;
+  top: -125px;
+  left: 20px;
   @media (min-width: 450px){
-    height: 252px;
-    width: 209px;
-    top: -245px;
-    left: 0;
+    height: calc(${baseFirstFlowerHeight} *1.35);
+    top: -170px;
   }
   @media (min-width: 1800px){
-    height: 377px;
-    width: 310px;
-    top: -365px;
-    left: 0;
+    height: calc(${baseFirstFlowerHeight} *2);
   }
 `;
 
 const StyledSecondBlueFlower = styled(SecondBlueFlower)`
-  height: 200px;
-  width: 180px;
+  height: 150px;
+  width: auto;
   position: absolute;
-  top: -165px;
+  top: -130px;
   display: none;
   @media (min-width: 850px){
     left: 24vw;
@@ -68,34 +65,29 @@ const StyledSecondBlueFlower = styled(SecondBlueFlower)`
 `;
 
 const StyledThirdBlueFlower = styled(ThirdBlueFlower)`
-  height: 176px;
-  width: 146px;
+  height: 136px;
+  width: auto;
   position: absolute;
-  top: -170px;
+  top: -135px;
   right: 50px;
   display: none;
   @media (min-width: 850px){
     display: inline-block;
   }
   @media (min-width: 1800px){
-    height: 270px;
-    width: 225px;
+    height: 210px;
     top: -260px;
-    right: 50px;
-    display: inline-block;
   }
 `;
 
 const StyledFishes = styled(Fishes)`
   position: absolute; 
-  width: 304px;
-  height: 152px;
+  width: auto;
+  height: 114px;
   top: -45vh;
   left: 70vw;
   @media (min-width: 850px){
-    width: 405px;
-    height: 203px;
-    top: -45vh;
+    height: 150px;
     left: 60vw;
   }
 `;
