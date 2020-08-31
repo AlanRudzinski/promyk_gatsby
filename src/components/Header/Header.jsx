@@ -4,7 +4,7 @@ import NavLink from 'components/NavLink';
 import LogoImg from 'components/LogoImg';
 import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import theme from 'styles/theme';
 import { useScrollY } from 'utils/hooks';
 import menuEntries from './menuEntries';
@@ -72,10 +72,12 @@ const Header = () => {
   }, [setMenuOpen]);
   useEffect(() => {
     if (menuOpen) {
-      disableBodyScroll(document.body);
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      disableBodyScroll(document.documentElement);
     } else {
-      enableBodyScroll(document.body);
-    } return () => enableBodyScroll(document.body);
+      enableBodyScroll(document.documentElement);
+      document.getElementsByTagName('html')[0].style = '';
+    } return () => clearAllBodyScrollLocks();
   }, [menuOpen]);
 
   const y = useScrollY();
@@ -90,7 +92,7 @@ const Header = () => {
           </StyledLogoName>
         </Link>
       </Logo>
-      <NavigationList menuOpen={menuOpen}>
+      <NavigationList menuOpen={menuOpen} id="hbMenu">
         {navItems}
       </NavigationList>
       <HamburgerButton menuOpen={menuOpen} handleClick={handleClick} />
