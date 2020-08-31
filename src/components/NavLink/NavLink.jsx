@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import theme from 'styles/theme';
+// import theme from 'styles/theme';
 
 const StyledNavLi = styled.li`
   height: 41px;
@@ -31,7 +31,8 @@ NavLink.propTypes = {
 };
 
 NavLink.defaultProps = {
-  color: theme.color.orangePrim,
+  // color: theme.color.orangePrim,
+  color: 'black',
 };
 
 export default NavLink;

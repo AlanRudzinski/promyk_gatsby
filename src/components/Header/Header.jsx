@@ -4,7 +4,7 @@ import NavLink from 'components/NavLink';
 import LogoImg from 'components/LogoImg';
 import HamburgerButton from 'components/HamburgerButton';
 import { Link } from 'gatsby';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import theme from 'styles/theme';
 import { useScrollY } from 'utils/hooks';
 import menuEntries from './menuEntries';
@@ -30,13 +30,16 @@ const StyledLogoName = styled.span`
   display: block;
   height: ${theme.layout.headerHeight};
   color: black;
-  font-size: 20px;
+  font: 24px Irregularis;
   line-height: ${theme.layout.headerHeight};
   position: absolute;
   top: 0;
   left: 50px;
   ${props => (props.scrollY > 50 ? 'opacity: 1;' : 'opacity: 0;')}
   ${props => (props.scrollY > 50 ? 'transition: opacity .4s ease-in;transition-delay: .2s;' : 'transition: opacity .1s ease-out; transition-delay: 0s;')}
+  @media (max-width: 700px) {
+    opacity: 1;
+  }
 `;
 
 const NavigationList = styled.ul`
@@ -45,7 +48,8 @@ const NavigationList = styled.ul`
     list-style: none;
     height: 100%;
     align-items: center;
-    @media (max-width: 860px) {
+    margin-right: 150px;
+    @media (max-width: 1000px) {
       flex-direction: column;
       background-color: ${theme.color.secondary};
       position: fixed;
@@ -68,10 +72,12 @@ const Header = () => {
   }, [setMenuOpen]);
   useEffect(() => {
     if (menuOpen) {
-      disableBodyScroll(document.body);
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      disableBodyScroll(document.documentElement);
     } else {
-      enableBodyScroll(document.body);
-    } return () => enableBodyScroll(document.body);
+      enableBodyScroll(document.documentElement);
+      document.getElementsByTagName('html')[0].style = '';
+    } return () => clearAllBodyScrollLocks();
   }, [menuOpen]);
 
   const y = useScrollY();
@@ -86,7 +92,7 @@ const Header = () => {
           </StyledLogoName>
         </Link>
       </Logo>
-      <NavigationList menuOpen={menuOpen}>
+      <NavigationList menuOpen={menuOpen} id="hbMenu">
         {navItems}
       </NavigationList>
       <HamburgerButton menuOpen={menuOpen} handleClick={handleClick} />
