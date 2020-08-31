@@ -19,17 +19,17 @@ const StyledBackgroundImage = styled(BackgroundImage)`
 `;
 
 const HeroTextBox = styled.span`
-    grid-row: 3;
-    justify-self: center;
-    background-color: white;
-    border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
-    color: black;
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    height: 170px;
-    padding: 20px 40px;
+  grid-row: 3;
+  justify-self: center;
+  background-color: white;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 170px;
+  padding: 20px 40px;
   @media(min-width: 350px) {
     height: 134px;
     width: 340px;

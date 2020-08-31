@@ -7,7 +7,7 @@ import SecondOrangeFlower from 'images/group52.svg';
 
 const StyledContainer = styled.div`
   width: 90vw;
-  margin: 100px 5vw 200px;
+  margin: 60px 5vw 200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,9 +17,8 @@ const StyledContainer = styled.div`
 
 const StyledFirstOrangeFlower = styled(FirstOrangeFlower)`
   position: absolute;
-  height: 337px;
-  width: 250px;
-  top: -170px;
+  height: 253px;
+  top: -128px;
   left: 50px;
   z-index: -1;
   @media (min-width: 1720px){
@@ -35,26 +34,22 @@ const StyledFirstOrangeFlower = styled(FirstOrangeFlower)`
 
 const StyledSecondOrangeFlower = styled(SecondOrangeFlower)`
   position: absolute;
-  height: 411px;
-  width: 180px;
+  height: 308px;
   right: -15px;
-  bottom: -302px;
+  bottom: -227px;
   @media (min-width: 580px){
-    height: 548px;
-    width: 240px;
+    height: 411px;
     right: -30px;
-    bottom: -335px;
+    bottom: -251px;
   }
   @media (min-width: 900px){
-    height: 730px;
-    width: 320px;
+    height: 548px;
     right: -50px;
-    bottom: -380px;
+    bottom: -293px;
   }
   @media (min-width: 1834px){
-    height: 365px;
-    width: 160px;
-    bottom: -290px;
+    height: 274px;
+    bottom: -218px;
   }
 `;
 
