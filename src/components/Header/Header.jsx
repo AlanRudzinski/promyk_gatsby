@@ -30,13 +30,16 @@ const StyledLogoName = styled.span`
   display: block;
   height: ${theme.layout.headerHeight};
   color: black;
-  font-size: 20px;
+  font: 24px Irregularis;
   line-height: ${theme.layout.headerHeight};
   position: absolute;
   top: 0;
   left: 50px;
   ${props => (props.scrollY > 50 ? 'opacity: 1;' : 'opacity: 0;')}
   ${props => (props.scrollY > 50 ? 'transition: opacity .4s ease-in;transition-delay: .2s;' : 'transition: opacity .1s ease-out; transition-delay: 0s;')}
+  @media (max-width: 700px) {
+    opacity: 1;
+  }
 `;
 
 const NavigationList = styled.ul`
