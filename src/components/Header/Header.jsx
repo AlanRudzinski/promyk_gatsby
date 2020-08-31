@@ -45,7 +45,8 @@ const NavigationList = styled.ul`
     list-style: none;
     height: 100%;
     align-items: center;
-    @media (max-width: 860px) {
+    margin-right: 150px;
+    @media (max-width: 1000px) {
       flex-direction: column;
       background-color: ${theme.color.secondary};
       position: fixed;
