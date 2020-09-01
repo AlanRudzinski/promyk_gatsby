@@ -28,7 +28,6 @@ const StyledContent = styled.div`
   z-index: 10;
   @media(min-width: 600px){
     width: auto;
-    align-items: center;
     justify-items: center;
     display: grid;
     gap: 20px 20px;
@@ -87,10 +86,12 @@ const StyledContactInfo = styled.div`
   color: black;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
   @media(min-width: 600px){
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 3;
+    padding-left: 60px;
   }
   @media(min-width: 800px){
     grid-column: 2;

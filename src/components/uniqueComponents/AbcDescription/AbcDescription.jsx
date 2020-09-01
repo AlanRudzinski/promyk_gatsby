@@ -21,24 +21,45 @@ const StyledContainer = styled.div`
 
 const StyledEntries = styled.ul`
   list-style: none;
-  width: 50%;
+  width: 70%;
   margin: 0;
   position: relative;
+  font-size: 14px;
+  @media (min-width: 500px) {
+    width: 80%;
+  }
+  @media(min-width: 800px) {
+    width: 50%;
+    font-size: 16px;
+  }
 `;
 
 const StyledRabbit = styled(rabbit)`
   position: absolute;
-  height: 160px;
-  top: -190px;
-  left: -70px;
+  height: 110px;
+  top: -170px;
+  left: -50px;
+  display: none;
+  @media(min-width: 880px) {
+    display: block;
+  }
+  @media(min-width: 1160px) {
+    height: 160px;
+    top: -190px;
+    left: -70px;
+  }
 `;
 
 const StyledSearchingRabbit = styled(searchingRabbit)`
   position: absolute;
-  height: 250px;
+  height: 190px;
   width: auto;
   bottom: -250px;
-  right: 120px;
+  right: 60px;
+  @media(min-width: 700px) {
+    height: 250px;
+    right: 120px;
+  }
 `;
 
 const AbcDescription = ({ dataCMS }) => (

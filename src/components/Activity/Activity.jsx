@@ -24,7 +24,7 @@ const StyledPicture = styled.div`
 const StyledDescription = styled.p`
   color: black;
   margin: auto 0;
-  font-size: 10px;
+  font-size: 14px;
   width: 70%;
   text-align: ${props => (props.side ? 'right' : 'left')};
   @media(min-width: 500px) {
@@ -37,7 +37,13 @@ const StyledContainer = styled.div`
   align-items: center;
   align-content: ${props => (props.side ? 'flex-end' : 'flex-start')};
   flex-direction: ${props => (props.side ? 'row-reverse' : 'row')};
-  margin-bottom: -50px;
+  margin-bottom: 50px;
+  @media(min-width: 450px) {
+    margin-bottom: 20px;
+  }
+  @media(min-width: 750px) {
+    margin-bottom: -50px;
+  }
 `;
 
 const Activity = ({ side, description, url }) => (

@@ -20,52 +20,51 @@ const StyledContainer = styled.div`
 const StyledFirstAlgae = styled(FirstAlgae)`
   position: absolute;
   height: 176px;
-  width: 72px;
   top: -139px;
-  left: 152px;
-  @media(min-height: 900px) {
-    height: 235px;
-    width: 96px;
-    top: -185px;
-    left: 160px;
+  display: none;
+  @media(min-width: 550px){
+    left: 50px;
+    display: block;
+  }
+  @media(min-width: 850px){
+    left: 152px;
   }
 `;
 
 const StyledSecondAlgae = styled(SecondAlgae)`
   position: absolute;
   height: 200px;
-  width: 39px;
   top: -188px;
-  left: 240px;
+  display: none;
   z-index: -1;
-  @media(min-height: 900px) {
-    height: 266px;
-    width: 52px;
-    top: -250px;
-    left: 270px;
+  @media(min-width: 550px){
+    left: 138px;
+    display: block;
+  }
+  @media(min-width: 850px){
+    left: 240px;
   }
 `;
 
 const StyledThirdAlgae = styled(ThirdAlgae)`
   position: absolute;
   height: 107px;
-  width: 39px;
   top: -98px;
-  left: 281px;
-  @media(min-height: 900px) {
-    height: 142px;
-    width: 52px;
-    top: -130px;
-    left: 325px;
+  display: none;
+  @media(min-width: 550px){
+    left: 179px;
+    display: block;
+  }
+  @media(min-width: 850px){
+    left: 281px;
   }
 `;
 
 const StyledFirstSquid = styled(FirstSquid)`
   position: absolute;
   height: 202px;
-  width: 225px;
-  top: 50px;
-  right: 270px;
+  top: -50px;
+  right: 170px;
   @media(min-width: 450px) {
     right: 320px;
   }
@@ -75,8 +74,8 @@ const StyledSecondSquid = styled(SecondSquid)`
   position: absolute;
   height: 149px;
   width: 159px;
-  top: 20px;
-  right: 110px;
+  top: -80px;
+  right: 10px;
   @media(min-width: 450px) {
     right: 160px;
   }

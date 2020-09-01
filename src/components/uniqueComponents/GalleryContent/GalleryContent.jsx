@@ -12,7 +12,6 @@ import Img from 'gatsby-image';
 
 // import PropTypes from 'prop-types';
 
-// todo: ustalic w jakis sposob ma wygladac powiekszanie zdjec, ile max zdj, optymalizacja
 
 const randomRotate = () => {
   const a = Math.floor(Math.random() * 12) - 6;
@@ -25,6 +24,7 @@ const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: -100px 0 100px;
 `;
 
 const StyledTitle = styled.h3`
@@ -38,7 +38,6 @@ const StyledTitle = styled.h3`
   }
 `;
 
-// eslint-disable-next-line no-unused-vars
 const StyledImg = styled(Img)`
   height: 100%;
   width: 100%;
@@ -53,6 +52,7 @@ const StyledImageButton = styled.button`
   width: 250px;
   height: 250px;
   flex-grow: 1;
+  max-width: 300px;
   cursor: pointer;
   border: none;
   background: white;
@@ -179,8 +179,5 @@ const GalleryContent = ({ title }) => {
     </StyledContainer>
   );
 };
-//       {pics.map(({ url }) => <StyledPlaceholder key={url} imageSrc={url} />)}
-
-// GalleryContent.propTypes = {};
 
 export default GalleryContent;
