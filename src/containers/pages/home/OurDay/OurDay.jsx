@@ -19,11 +19,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const OurDay = () => (
+const OurDay = ({ data }) => (
   <Section title={{ value: content.ourDaySection.title }}>
     <Container>
       <StyledImg />
-      <ScheduleContent topMargin={20} />
+      <ScheduleContent topMargin={80} data={data} />
     </Container>
   </Section>
 );
