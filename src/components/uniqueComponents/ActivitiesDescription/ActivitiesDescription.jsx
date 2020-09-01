@@ -22,12 +22,12 @@ const StyledFirstAlgae = styled(FirstAlgae)`
   height: 176px;
   width: 72px;
   top: -139px;
-  left: 2px;
+  left: 152px;
   @media(min-height: 900px) {
     height: 235px;
     width: 96px;
     top: -185px;
-    left: 10px;
+    left: 160px;
   }
 `;
 
@@ -36,13 +36,13 @@ const StyledSecondAlgae = styled(SecondAlgae)`
   height: 200px;
   width: 39px;
   top: -188px;
-  left: 90px;
+  left: 240px;
   z-index: -1;
   @media(min-height: 900px) {
     height: 266px;
     width: 52px;
     top: -250px;
-    left: 120px;
+    left: 270px;
   }
 `;
 
@@ -51,12 +51,12 @@ const StyledThirdAlgae = styled(ThirdAlgae)`
   height: 107px;
   width: 39px;
   top: -98px;
-  left: 131px;
+  left: 281px;
   @media(min-height: 900px) {
     height: 142px;
     width: 52px;
     top: -130px;
-    left: 175px;
+    left: 325px;
   }
 `;
 
@@ -65,9 +65,9 @@ const StyledFirstSquid = styled(FirstSquid)`
   height: 202px;
   width: 225px;
   top: 50px;
-  right: 170px;
+  right: 270px;
   @media(min-width: 450px) {
-    right: 220px;
+    right: 320px;
   }
 `;
 
@@ -76,9 +76,9 @@ const StyledSecondSquid = styled(SecondSquid)`
   height: 149px;
   width: 159px;
   top: 20px;
-  right: 10px;
+  right: 110px;
   @media(min-width: 450px) {
-    right: 60px;
+    right: 160px;
   }
 `;
 

@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 const StyledContainer = styled.div`
   display: inline-block;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 30%;
 `;
 
 const StyledPortrait = styled.img`
@@ -13,7 +18,6 @@ const StyledPortrait = styled.img`
   height: 250px;
   width: 250px;
   margin-top: 20px;
-  margin-left: 25px;
 `;
 
 const StyledName = styled.h3`

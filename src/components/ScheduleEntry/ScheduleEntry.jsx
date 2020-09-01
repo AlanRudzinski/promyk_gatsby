@@ -49,6 +49,7 @@ const StyledLineBot = styled.div`
 `;
 // todo: vertical-align description to label
 const StyledEntryDescription = styled.p`
+  padding-top: 12px;
   grid-column: 2;
   grid-row: 2;
   color: black;
@@ -99,6 +100,7 @@ const StyledDotDescription = styled.p`
   margin: 0;
   font-size: 12px;
   max-height: 70px;
+  padding-top: 16px;
   @media (min-width:650px) {
     font-size: 14px;
   }
@@ -111,9 +113,9 @@ const StyledHour = styled.span`
 const ScheduleEntry = ({
   boxText,
   topLine,
-  botDot,
   botDotDescription,
   boxHour,
+  description,
 }) => (
   <StyledEntry>
     <StyledLabel>
@@ -121,7 +123,7 @@ const ScheduleEntry = ({
       <StyledHour>{boxHour}</StyledHour>
     </StyledLabel>
     <StyledLineBot>
-      <StyledDotContainer botDot={botDot}>
+      <StyledDotContainer botDot={botDotDescription}>
         <StyledDot />
         <StyledDotDescription>
           {botDotDescription}
@@ -129,11 +131,7 @@ const ScheduleEntry = ({
       </StyledDotContainer>
     </StyledLineBot>
     <StyledLineTop topLine={topLine} />
-    <StyledEntryDescription>
-      Dla nas dzień zaczyna się od godziny 7:00.
-      dzieci schodzą się i witają. Uczymy się serdeczności i bycia miłym nawet w
-      tak wczesnych godzinach. Gimnastyka poranna.
-    </StyledEntryDescription>
+    <StyledEntryDescription>{description}</StyledEntryDescription>
   </StyledEntry>
 );
 

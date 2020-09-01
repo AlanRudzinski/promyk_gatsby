@@ -8,12 +8,11 @@ import ScheduleContent from 'components/uniqueComponents/ScheduleContent';
 import Layout from 'containers/Layout';
 
 
-// todo: podpiac datoCMS
 const schedulePage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#DA647C', 0.5)}>
     <PageHeading title="Nasz dzien" />
     <ScheduleDescription />
-    <ScheduleContent waves topMargin={100} />
+    <ScheduleContent waves topMargin={100} data={data.datoCmsOurDay} />
   </Layout>
 );
 
@@ -30,6 +29,15 @@ export const query = graphql`
       bankNum
       phoneNums {
         num
+      }
+    }
+    datoCmsOurDay {
+      day {
+        activityAction
+        dotDescription
+        hour
+        opis
+        topLine
       }
     }
   }
