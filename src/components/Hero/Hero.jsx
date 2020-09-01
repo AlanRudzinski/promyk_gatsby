@@ -13,7 +13,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   text-align: center;
   width: 100%;
   background-size: cover;
-  background-position: top center;
+  background-position: 50% -20%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr
 `;

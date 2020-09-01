@@ -7,6 +7,7 @@ import Fishes from 'images/fishes.svg';
 const StyledDayAndHour = styled.li`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 `;
 
 const StyledContainer = styled.div`
