@@ -12,7 +12,7 @@ const GalleryPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#8FCAC2', 0.5)}>
     <Seo title="Galeria" />
     <PageHeading title="Galeria" />
-    <GalleryContent />
+    <GalleryContent title="Zapraszamy do obejrzenia zdjęć z życia naszego przedszkola:" />
   </Layout>
 );
 
