@@ -25,8 +25,8 @@ const StyledBubblesLeft = styled(bubblesLeft)`
 
 const NewsPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#FFF2B5', 0.5)}>
-    <Seo title="Aktualnosci" />
-    <PageHeading title="Aktualnosci" />
+    <Seo title="Aktualności" />
+    <PageHeading title="Aktualności" />
     <StyledBubblesLeft />
     <NewsContainer news={data.datoCmsNews} />
   </Layout>

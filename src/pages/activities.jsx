@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from 'containers/Layout';
 import PageHeading from 'containers/PageHeading';
+import Seo from 'components/Seo';
 import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
 import ActivitiesDescription from 'components/uniqueComponents/ActivitiesDescription';
@@ -63,6 +64,7 @@ const StyledSVGcontainer = styled.div`
 
 const ActivityPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#fed18c', 0.5)}>
+    <Seo title="Oferta" />
     <PageHeading title="Oferta" />
     <ActivitiesDescription />
     <ActivitiesContent dataCMS={data.datoCmsActivity.activity} />
