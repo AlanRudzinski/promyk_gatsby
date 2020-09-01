@@ -24,14 +24,21 @@ const StyledCrab = styled(Crab)`
   height: 245px;
   position: absolute;
   display: none;
-  top: -170px;
   z-index: -2;
   @media (min-width: 550px) {
-    left: -60px;
+    left: 20px;
+    top: -140px;
     display: block;
   }
   @media (min-width: 750px){
-    left: 10px;
+    left: 0px;
+    top: -170px;
+  }
+  @media (min-width: 1000px){
+    left: 110px;
+  }
+  @media (min-width: 1500px){
+    left: 250px;
   }
 `;
 

@@ -94,6 +94,9 @@ export const query = graphql`
       activity {
         side
         description
+        picture {
+          url
+        }
       }
     }
   }

@@ -7,6 +7,7 @@ import smallWaves from 'images/smallWaves.svg';
 // import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
+  margin-top: -100px;
   min-height: 500px;
   width: 100%;
   display: flex;
@@ -52,17 +53,20 @@ const StyledBotWave = styled(smallWaves)`
 }
 `;
 
-const ScheduleContent = ({ waves, topMargin }) => (
+const ScheduleContent = ({ waves, topMargin, data }) => (
   <StyledContainer>
     <StyledContent topMargin={topMargin}>
       <StyledTopWave waves={waves} />
       <StyledBotWave waves={waves} />
-      <ScheduleEntry boxText="Powitanie: " boxHour="7:00" botDot botDotDescription="Przygotowanie do śniadania: 9:00 -9:30 Dzieci myją raczki i uczestniczą w przygotowaniu posiłku- rozkładają talerzyki, sztućce." />
-      <ScheduleEntry boxText="Sniadanie: " boxHour="9:30" topLine />
-      <ScheduleEntry boxText="Edukacja: " boxHour="10:00" />
-      <ScheduleEntry boxText="Obiad: " boxHour="12:00" />
-      <ScheduleEntry boxText="Odpoczynek: " boxHour="12:30" />
-      <ScheduleEntry boxText="Podwieczorek: " boxHour="14:30" botDot botDotDescription="Czas na dowolną zabawę, podejmowanie własnej inicjatywy w zabawie, rozmowy z rodzicami, rozchodzenie się dzieci do domów." />
+      {data.day.map(day => (
+        <ScheduleEntry
+          boxText={day.activityAction}
+          boxHour={day.hour}
+          botDotDescription={day.dotDescription}
+          description={day.opis}
+          topLine={day.topLine}
+        />
+      ))}
       <StyledPaperPlane />
     </StyledContent>
   </StyledContainer>
