@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
     <Seo title="Home" />
     <Hero {...data.datoCmsGeneral} />
     <Description />
-    <OurDay />
+    <OurDay data={data.datoCmsOurDay} />
     <Comments />
     <Contact withTitle fishes marginBot={200} />
   </Layout>
@@ -40,5 +40,14 @@ export const query = graphql`
             num
           }
         }
-    }
+        datoCmsOurDay {
+          day {
+            activityAction
+            dotDescription
+            hour
+            opis
+            topLine
+          }
+        }
+      }
 `;
