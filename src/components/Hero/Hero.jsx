@@ -19,6 +19,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
 `;
 
 const HeroTextBox = styled.span`
+  border: black 1px solid;
   grid-row: 3;
   justify-self: center;
   background-color: white;
@@ -30,6 +31,7 @@ const HeroTextBox = styled.span`
   width: 100%;
   height: 170px;
   padding: 20px 40px;
+  font-size: 1.3rem;
   @media(min-width: 350px) {
     height: 134px;
     width: 340px;
@@ -42,6 +44,7 @@ const HeroTextBox = styled.span`
 
 const HeroText = styled.div`
   display: inline-block;
+  margin-bottom: -15px;
   `;
 
 const Hero = ({ motto }) => (

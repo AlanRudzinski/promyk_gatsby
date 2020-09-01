@@ -80,17 +80,17 @@ const StyledFishes = styled(Fishes)`
   width: 120px;
   height: 80px;
   position: absolute;
-  right: 20px;
-  top: 380px;
+  right: 40px;
+  top: 430px;
   @media(min-width: 500px){
-    right: 50px;
-    top: 260px;
+    right: 55px;
+    top: 300px;
   }
   @media(min-width: 580px){
     width: 200px;
     height: 150px;
-    right: 15px;
-    top: 220px;
+    right: 55px;
+    top: 260px;
   }
   @media(min-width: 1040px){
     top: -10px;

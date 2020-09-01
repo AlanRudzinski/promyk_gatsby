@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
 const StyledFirstOrangeFlower = styled(FirstOrangeFlower)`
   position: absolute;
   height: 253px;
-  top: -128px;
+  top: -100px;
   left: 50px;
   z-index: -1;
   @media (min-width: 1720px){

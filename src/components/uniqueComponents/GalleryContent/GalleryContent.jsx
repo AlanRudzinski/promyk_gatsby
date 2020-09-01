@@ -52,6 +52,7 @@ const StyledImageButton = styled.button`
   width: 250px;
   height: 250px;
   flex-grow: 1;
+  max-width: 300px;
   cursor: pointer;
   border: none;
   background: white;
