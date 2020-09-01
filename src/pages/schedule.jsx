@@ -13,7 +13,7 @@ const schedulePage = ({ data }) => (
     <Seo title="Nasz Dzień" />
     <PageHeading title="Nasz dzien" />
     <ScheduleDescription />
-    <ScheduleContent waves topMargin={100} data={data.datoCmsOurDay} />
+    <ScheduleContent waves topMargin={100} botMargin={250} data={data.datoCmsOurDay} />
   </Layout>
 );
 

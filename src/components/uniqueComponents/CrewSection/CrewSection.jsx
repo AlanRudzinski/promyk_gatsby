@@ -34,22 +34,15 @@ const StyledFirstOrangeFlower = styled(FirstOrangeFlower)`
 
 const StyledSecondOrangeFlower = styled(SecondOrangeFlower)`
   position: absolute;
-  height: 308px;
-  right: -15px;
-  bottom: -227px;
+  height: 180px;
+  right: -80px;
+  bottom: -205px;
   @media (min-width: 580px){
-    height: 411px;
-    right: -30px;
-    bottom: -251px;
+    height: 230px;
   }
   @media (min-width: 900px){
-    height: 548px;
-    right: -50px;
-    bottom: -293px;
-  }
-  @media (min-width: 1834px){
-    height: 274px;
-    bottom: -218px;
+    height: 280px;
+    right: -3 0px;
   }
 `;
 

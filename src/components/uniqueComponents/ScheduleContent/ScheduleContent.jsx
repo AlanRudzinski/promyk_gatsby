@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledContent = styled.div`
-  ${props => (`margin: ${props.topMargin}px 0 250px;`)}
+  ${props => (`margin: ${props.topMargin}px 0 ${props.botMargin}px;`)}
   padding: 50px 0;
   width: 80%;
   display: flex;
@@ -53,9 +53,11 @@ const StyledBotWave = styled(smallWaves)`
 }
 `;
 
-const ScheduleContent = ({ waves, topMargin, data }) => (
+const ScheduleContent = ({
+  waves, topMargin, data, botMargin,
+}) => (
   <StyledContainer>
-    <StyledContent topMargin={topMargin}>
+    <StyledContent topMargin={topMargin} botMargin={botMargin}>
       <StyledTopWave waves={waves} />
       <StyledBotWave waves={waves} />
       {data.day.map(day => (
