@@ -7,6 +7,7 @@ import smallWaves from 'images/smallWaves.svg';
 // import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
+  margin-top: -100px;
   min-height: 500px;
   width: 100%;
   display: flex;
