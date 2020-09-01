@@ -5,7 +5,7 @@ import Heading from 'components/Heading';
 import theme from 'styles/theme';
 
 const StyledHeading = styled(Heading)`
-  margin: calc(${theme.layout.headerHeight} + 70px) auto 1.5rem auto;
+  margin: calc(${theme.layout.headerHeight} + 20px) auto 1.5rem auto;
   font-size: 2rem;
   font-family: 'Irregularis';
   width: 70%;

@@ -17,6 +17,9 @@ const StyledTitle = styled.h1`
   font-weight: normal;
   text-align: center;
   color: black;
+  @media(max-width: 500px) {
+    font-size: 2.5rem;
+  }
   @media(min-width: 1500px) {
     font-size: 4.25rem;
   }

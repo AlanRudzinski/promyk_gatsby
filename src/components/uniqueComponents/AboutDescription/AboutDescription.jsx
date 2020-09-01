@@ -24,7 +24,6 @@ const StyledContainer = styled.div`
 `;
 
 const StyledDescriptionText = styled.div`
-  color: white;
   text-align: center;
   width: 80%;
   font-size: 14px;

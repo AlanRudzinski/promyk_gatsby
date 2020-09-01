@@ -23,7 +23,7 @@ const OurDay = ({ data }) => (
   <Section title={{ value: content.ourDaySection.title }}>
     <Container>
       <StyledImg />
-      <ScheduleContent topMargin={80} data={data} />
+      <ScheduleContent topMargin={80} botMargin={150} data={data} />
     </Container>
   </Section>
 );
