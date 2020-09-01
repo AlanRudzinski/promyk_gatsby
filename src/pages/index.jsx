@@ -13,7 +13,7 @@ import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA(theme.color.primary, 0.5)}>
-    <Seo title="Home" />
+    <Seo title="Strona główna" />
     <Hero {...data.datoCmsGeneral} />
     <Description />
     <OurDay data={data.datoCmsOurDay} />

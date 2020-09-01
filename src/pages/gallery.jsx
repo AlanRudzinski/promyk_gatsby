@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import Seo from 'components/Seo';
+import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 import PageHeading from 'containers/PageHeading';
 import { graphql } from 'gatsby';
@@ -10,8 +10,9 @@ import GalleryContent from 'components/uniqueComponents/GalleryContent';
 
 const GalleryPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#8FCAC2', 0.5)}>
+    <Seo title="Galeria" />
     <PageHeading title="Galeria" />
-    <GalleryContent />
+    <GalleryContent title="Zapraszamy do obejrzenia zdjęć z życia naszego przedszkola:" />
   </Layout>
 );
 
