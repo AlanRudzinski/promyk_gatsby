@@ -22,7 +22,7 @@ const StyledP = styled.p`
 const ActivitiesContent = ({ dataCMS }) => (
   <StyledContainer>
     {dataCMS.map(row => (
-      <Activity side={row.side} description={row.description} />
+      <Activity side={row.side} description={row.description} url={row.picture.url} />
     ))}
     <StyledP>Jesteśmy również otwarci na propozycje ze strony rodziców.</StyledP>
   </StyledContainer>

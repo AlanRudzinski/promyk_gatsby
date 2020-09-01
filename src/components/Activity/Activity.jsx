@@ -11,7 +11,10 @@ const StyledPicture = styled.div`
   height: 100px;
   margin: 20px;
   flex-shrink: 0;
-  background-color: tomato;
+  background-image: url(${props => props.url});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   @media(min-width: 500px) {
     width: 150px;
     height: 150px;
@@ -21,7 +24,8 @@ const StyledPicture = styled.div`
 const StyledDescription = styled.p`
   color: black;
   margin: auto 0;
-  font-size: 12px;
+  font-size: 10px;
+  width: 70%;
   text-align: ${props => (props.side ? 'right' : 'left')};
   @media(min-width: 500px) {
     font-size: 16px;
@@ -31,13 +35,14 @@ const StyledDescription = styled.p`
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
+  align-content: ${props => (props.side ? 'flex-end' : 'flex-start')};
   flex-direction: ${props => (props.side ? 'row-reverse' : 'row')};
-  margin-bottom: 40px;
+  margin-bottom: -50px;
 `;
 
-const Activity = ({ side, description }) => (
+const Activity = ({ side, description, url }) => (
   <StyledContainer side={side}>
-    <StyledPicture />
+    <StyledPicture url={url} />
     <StyledDescription side={side}>{description}</StyledDescription>
   </StyledContainer>
 );
