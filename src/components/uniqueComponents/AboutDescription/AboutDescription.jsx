@@ -64,14 +64,14 @@ const StyledSecondBlueFlower = styled(SecondBlueFlower)`
 `;
 
 const StyledThirdBlueFlower = styled(ThirdBlueFlower)`
-  height: 136px;
+  height: 90px;
   width: auto;
   position: absolute;
-  top: -135px;
-  right: 50px;
-  display: none;
-  @media (min-width: 850px){
-    display: inline-block;
+  top: -88px;
+  right: 30px;
+  @media (min-width: 600px){
+    height: 136px;
+    top: -135px;
   }
   @media (min-width: 1800px){
     height: 210px;

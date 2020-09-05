@@ -174,7 +174,6 @@ const GalleryContent = ({ title }) => {
             <StyledImg fluid={fluid} />
           </StyledImageButton>
         ))}
-        )
       </StyledImagesContainer>
     </StyledContainer>
   );

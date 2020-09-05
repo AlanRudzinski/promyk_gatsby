@@ -31,8 +31,8 @@ const StyledContent = styled.div`
 const StyledPaperPlane = styled(paperPlane)`
   position: absolute;
   width: 410px;
-  bottom: -100px;
-  left: calc(50% - 360px);
+  bottom: -150px;
+  left: calc(50% - 340px);
 `;
 
 const StyledTopWave = styled(smallWaves)`

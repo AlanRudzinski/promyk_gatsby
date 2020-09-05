@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     max-width: 100%;
     overflow-x: hidden;
   };
