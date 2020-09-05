@@ -41,6 +41,18 @@ const StyledSecondBubblesLeft = styled(bubblesLeft)`
   left: 130px;
 `;
 
+const StyledThirdBubblesRight = styled(bubblesRight)`
+  height: 200px;
+  position: absolute;
+  top: -150px;
+  right: 30px;
+  z-index: -1;
+  display: none;
+  @media(min-width: 650px) {
+    display: block;
+  }
+`;
+
 const StyledFirstBubblesRight = styled(bubblesRight)`
   height: 250px;
   width: auto;
@@ -125,6 +137,7 @@ const NewsContainer = ({ news }) => (
   <StyledContainer>
     <StyledFirstBubblesLeft />
     <StyledSecondBubblesLeft />
+    <StyledThirdBubblesRight />
     <StyledFirstBubblesRight />
     <StyledSecondBubblesRight />
     <StyledFirstAlgae />

@@ -77,7 +77,6 @@ const StyledMap = styled.img`
   `;
 
 const StyledFishes = styled(Fishes)`
-  width: 120px;
   height: 80px;
   position: absolute;
   right: 40px;
@@ -87,7 +86,6 @@ const StyledFishes = styled(Fishes)`
     top: 300px;
   }
   @media(min-width: 580px){
-    width: 200px;
     height: 150px;
     right: 55px;
     top: 260px;
