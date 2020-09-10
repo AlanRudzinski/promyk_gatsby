@@ -6,9 +6,7 @@ name: OnWebhookBuild
 # events but only for the master branch
 on:
   repository_dispatch:
-    types:
-      -webhook-one
-      -webhook-two
+  
 jobs:
   build:
     name: build
