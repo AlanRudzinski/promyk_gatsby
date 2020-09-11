@@ -54,28 +54,28 @@ const StyledImagesContainer = styled.div`
   justify-content: center;
 `;
 
-const Description = () => (
+const Description = ({ description, cards }) => (
   <Section title={{ value: content.descriptionSection.title }}>
     <StyledContainer>
       <StyledContent>
         <StyledContentImg />
-        <StyledContentText>{content.descriptionSection.content}</StyledContentText>
+        <StyledContentText>{description}</StyledContentText>
       </StyledContent>
       <StyledImagesContainer>
         <FlippingCard
           imageSrc="garden.jpg"
-          front={content.descriptionSection.firstCardTitle}
-          back={content.descriptionSection.firstCardContent}
+          front={cards[0].front}
+          back={cards[0].back}
         />
         <FlippingCard
           imageSrc="batman.jpg"
-          front={content.descriptionSection.secondCardTitle}
-          back={content.descriptionSection.secondCardContent}
+          front={cards[1].front}
+          back={cards[1].back}
         />
         <FlippingCard
           imageSrc="santa.jpg"
-          front={content.descriptionSection.thirdCardTitle}
-          back={content.descriptionSection.thirdCardContent}
+          front={cards[2].front}
+          back={cards[2].back}
         />
       </StyledImagesContainer>
       <RedirectButton text="Zobacz pelna oferte..." destination="/about" />

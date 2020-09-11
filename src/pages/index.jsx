@@ -15,10 +15,10 @@ const IndexPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA(theme.color.primary, 0.5)}>
     <Seo title="Strona główna" />
     <Hero {...data.datoCmsGeneral} />
-    <Description />
+    <Description {...data.datoCmsGeneral} />
     <OurDay data={data.datoCmsOurDay} />
     <Comments />
-    <Contact withTitle fishes marginBot={200} />
+    <Contact withTitle fishes marginBot={200} contactData={data.datoCmsContact} />
   </Layout>
 );
 
@@ -28,9 +28,24 @@ export const query = graphql`
     query indexPageQuery {
         datoCmsGeneral {
           motto
+          description
+          cards {
+            ... on DatoCmsCardOne {
+              front
+              back
+            }
+            ... on DatoCmsCardTwo {
+              front
+              back
+            }
+            ... on DatoCmsCardThree {
+              front
+              back
+            }
+          }
         }
         datoCmsContact {
-          street,
+          street
           city
           company
           email

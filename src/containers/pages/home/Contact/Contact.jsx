@@ -100,7 +100,7 @@ const Contact = ({
   withTitle, fishes, marginTop, marginBot,
 }) => (
   <Section
-    title={withTitle ? { value: content.contactSection.title } : undefined}
+    title={withTitle ? 'Kontakt' : undefined}
     marginBot={marginBot}
     marginTop={marginTop}
   >
