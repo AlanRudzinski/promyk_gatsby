@@ -12,6 +12,8 @@ module.exports = {
     'gatsby-plugin-eslint',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-preact',
+    'gatsby-plugin-preload-fonts',
     {
       resolve: 'gatsby-source-datocms',
       options: {

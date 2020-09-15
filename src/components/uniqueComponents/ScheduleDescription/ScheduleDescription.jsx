@@ -5,7 +5,6 @@ import Waves from 'images/waves.svg';
 import Crab from 'images/crab.svg';
 import smallWaves from 'images/smallWaves.svg';
 
-
 const StyledContainer = styled.div`
   width: 100%;
   height: 300px;

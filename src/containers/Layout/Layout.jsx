@@ -15,7 +15,6 @@ import theme from 'styles/theme';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-
 const GlobalStyle = createGlobalStyle`
   html, body {
     font-size: 16px;
@@ -26,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
   };
 
 `;
-
 
 const Layout = ({
   children, dataCMS, bgFooter, bgGradient, bubbles

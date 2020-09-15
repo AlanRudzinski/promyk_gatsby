@@ -40,7 +40,6 @@ const StyledBubblesRightSecond = styled(bubblesRight)`
   }
 `;
 
-
 const StyledFishRight = styled(fishRight)`
   position: absolute;
   height: 120px;

@@ -30,11 +30,6 @@ const Section = ({
 
 Section.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  title: PropTypes.shape({
-    value: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-    level: PropTypes.number,
-  }),
 };
-
 
 export default Section;

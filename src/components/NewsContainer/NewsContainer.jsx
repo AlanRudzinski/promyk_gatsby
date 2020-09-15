@@ -11,7 +11,6 @@ import algae from 'images/algaes.svg';
 import shell from 'images/shell.svg';
 import star from 'images/star.svg';
 
-
 const StyledContainer = styled.div`
   width: 75%;
   min-height: 650px;

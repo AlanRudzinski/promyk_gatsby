@@ -3,6 +3,8 @@ import Section from 'containers/Section';
 import content from 'content/home.json';
 import styled from 'styled-components';
 import Fishes from 'images/fishes.svg';
+import { graphql, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 
 const StyledDayAndHour = styled.li`
   display: flex;
@@ -50,8 +52,9 @@ const StyledLine = styled.li`
   margin-bottom: 25px;
 `;
 
-const StyledHoursTitle = styled.h3`
+const StyledHoursTitle = styled.h2`
   text-align: center;
+  margin-bottom: 10px;
 `;
 
 const StyledHoursList = styled.ul`
@@ -64,15 +67,18 @@ const StyledHoursList = styled.ul`
   }
 `;
 
-const StyledMap = styled.img`
-  width: auto;
+// eslint-disable-next-line no-unused-vars
+const StyledImgContainer = styled.div`
   height: 180px;
+  width: 380px;
   margin: 0;
   @media(min-width: 580px){
     height: 280px;
+    width: 450px;
   };
   @media(min-width: 580px){
     height: 380px;
+    width: 550px;
   }
   `;
 
@@ -99,34 +105,52 @@ const StyledFishes = styled(Fishes)`
 const Contact = ({
   withTitle, fishes, marginTop, marginBot,
 }) => (
-  <Section
-    title={withTitle ? 'Kontakt' : undefined}
-    marginBot={marginBot}
-    marginTop={marginTop}
-  >
-    <StyledContainer>
-      <StyledTextContainer>
-        <StyledContact>
-          <StyledLine>{content.contactSection.adress}</StyledLine>
-          <StyledLine>{content.contactSection.email}</StyledLine>
-          <StyledLine>{content.contactSection.telephone}</StyledLine>
-        </StyledContact>
-        <StyledHoursList>
-          <StyledHoursTitle>Godziny otwarcia</StyledHoursTitle>
-          {content.contactSection.hours.map((a, i) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <StyledDayAndHour key={i}>
-              <span>{content.contactSection.days[i]}</span>
-              <span>{a}</span>
-            </StyledDayAndHour>
-          ))}
-        </StyledHoursList>
-      </StyledTextContainer>
-      <StyledMap src="map.png" alt="" />
-      {fishes ? <StyledFishes /> : null}
-    </StyledContainer>
-  </Section>
+  <StaticQuery
+    query={graphql`
+    query {
+      mapImage: file(relativePath: { eq: "map.png"}) {
+        childImageSharp {
+          fluid(maxHeight: 380) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `}
+    render={data => (
+      <Section
+        title={withTitle ? 'Kontakt' : undefined}
+        marginBot={marginBot}
+        marginTop={marginTop}
+      >
+        <StyledContainer>
+          <StyledTextContainer>
+            <StyledContact>
+              <StyledLine>{content.contactSection.adress}</StyledLine>
+              <StyledLine>{content.contactSection.email}</StyledLine>
+              <StyledLine>{content.contactSection.telephone}</StyledLine>
+            </StyledContact>
+            <div>
+              <StyledHoursTitle>Godziny otwarcia</StyledHoursTitle>
+              <StyledHoursList>
+                {content.contactSection.hours.map((a, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <StyledDayAndHour key={i}>
+                    <span>{content.contactSection.days[i]}</span>
+                    <span>{a}</span>
+                  </StyledDayAndHour>
+                ))}
+              </StyledHoursList>
+            </div>
+          </StyledTextContainer>
+          <StyledImgContainer>
+            <Img fluid={data.mapImage.childImageSharp.fluid} />
+          </StyledImgContainer>
+          {fishes ? <StyledFishes /> : null}
+        </StyledContainer>
+      </Section>
+    )}
+  />
 );
-
 
 export default Contact;

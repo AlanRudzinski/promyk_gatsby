@@ -10,7 +10,6 @@ import PageHeading from 'containers/PageHeading';
 import NewsContainer from 'components/NewsContainer';
 import bubblesLeft from 'images/bubblesLeft.svg';
 
-
 const StyledBubblesLeft = styled(bubblesLeft)`
   position: absolute;
   height: 210px;

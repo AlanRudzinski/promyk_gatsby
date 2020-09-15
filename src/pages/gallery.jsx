@@ -7,7 +7,6 @@ import { graphql } from 'gatsby';
 import hexToRGBA from 'utils/hexToRGBA';
 import GalleryContent from 'components/uniqueComponents/GalleryContent';
 
-
 const GalleryPage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#8FCAC2', 0.5)}>
     <Seo title="Galeria" />

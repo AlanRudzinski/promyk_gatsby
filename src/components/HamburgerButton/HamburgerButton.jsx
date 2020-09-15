@@ -61,7 +61,7 @@ ${props => (props.menuOpen ? 'transform: translate3d(0, 10px, 0) rotate(45deg);'
 `;
 
 const HamburgerButton = ({ menuOpen, handleClick }) => (
-  <Hamburger type="button" onClick={handleClick}>
+  <Hamburger type="button" name="menu" aria-label="menu" onClick={handleClick}>
     <Box>
       <Line menuOpen={menuOpen} />
     </Box>

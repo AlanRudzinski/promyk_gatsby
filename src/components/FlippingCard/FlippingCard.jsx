@@ -37,7 +37,7 @@ const StyledContent = styled.p`
   transform: rotateY(180deg);
 `;
 
-const StyledText = styled.h3`
+const StyledText = styled.h2`
   height: 70px;
   width: 200px;
   display: flex;
@@ -67,7 +67,6 @@ const StyledWrapper = styled.div`
   transform: ${props => (props.flipped ? 'scale(1.1) rotateY(-180deg);' : 'scale(1) rotateY(0deg);')}
   box-shadow: ${props => (props.flipped ? '0 0 10px 0 rgba(0, 0, 0, .1);' : '0 0 0 0')}
 `;
-
 
 const FlippingCard = ({ imageSrc, front, back }) => {
   const [flipped, setFlipped] = useState(false);

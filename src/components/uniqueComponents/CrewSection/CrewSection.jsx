@@ -4,7 +4,6 @@ import CrewMember from 'components/CrewMember';
 import FirstOrangeFlower from 'images/group56.svg';
 import SecondOrangeFlower from 'images/group52.svg';
 
-
 const StyledContainer = styled.div`
   width: 90vw;
   margin: 60px 5vw 200px;
@@ -45,7 +44,6 @@ const StyledSecondOrangeFlower = styled(SecondOrangeFlower)`
     right: -3 0px;
   }
 `;
-
 
 const CrewSection = ({ crew }) => (
   <StyledContainer>

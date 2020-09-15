@@ -25,7 +25,6 @@ const StyledDot = styled.span`
   }
 `;
 
-
 const StyledComment = styled.p`
 display: inline-flex;
 justify-content: center;

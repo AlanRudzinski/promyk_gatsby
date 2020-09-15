@@ -31,6 +31,7 @@ const StyledLogoName = styled.span`
   height: ${theme.layout.headerHeight};
   color: black;
   font: 24px Irregularis;
+  font-display: swap;
   line-height: ${theme.layout.headerHeight};
   position: absolute;
   top: 0;
@@ -99,6 +100,5 @@ const Header = () => {
     </StyledHeader>
   );
 };
-
 
 export default Header;

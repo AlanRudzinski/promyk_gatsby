@@ -6,7 +6,6 @@ import PhoneIcon from 'images/PhoneIcon.svg';
 import multipleBubblesFilled from 'images/multipleBubblesFilled.svg';
 import multipleBubblesEmpty from 'images/multipleBubblesEmpty.svg';
 
-
 const StyledFooter = styled.footer`
   height: auto;
   background-color: ${props => props.bgFooter};
@@ -200,7 +199,6 @@ const Footer = ({
     </StyledContent>
   </StyledFooter>
 );
-
 
 Footer.defaultProps = {
   phoneNums: [

@@ -6,7 +6,6 @@ import RedirectButton from 'components/RedirectButton';
 import FlippingCard from 'components/FlippingCard';
 import Turtle from 'images/turtle.svg';
 
-
 const StyledContent = styled.div`
   display: flex;
   width: 100%;
@@ -82,6 +81,5 @@ const Description = ({ description, cards }) => (
     </StyledContainer>
   </Section>
 );
-
 
 export default Description;

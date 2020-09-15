@@ -59,13 +59,14 @@ const StyledDotContainer = styled.div`
 const AbcEntry = ({ dotColor, text, lowerText }) => {
   const [clicked, setClicked] = useState(false);
 
-
   return (
     <StyledItem>
       <StyledContainer>
         <StyledDotContainer>
           <StyledDot dotColor={dotColor} />
           <StyledButton
+            name="Abc Entry"
+            aria-label="ABC entry"
             onClick={() => setClicked(!clicked)}
             dotColor={dotColor}
             clicked={clicked}

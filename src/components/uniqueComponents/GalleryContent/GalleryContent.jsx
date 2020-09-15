@@ -9,9 +9,7 @@ import LightboxComponent from 'components/LightBox';
 // eslint-disable-next-line no-unused-vars
 import Img from 'gatsby-image';
 
-
 // import PropTypes from 'prop-types';
-
 
 const randomRotate = () => {
   const a = Math.floor(Math.random() * 12) - 6;
@@ -170,7 +168,7 @@ const GalleryContent = ({ title }) => {
         <StyledFilledBubblesLeft />
         <StyledFilledBubblesRight />
         {fluidImages.map(({ fluid }, index) => (
-          <StyledImageButton type="button" onClick={() => openLightBox(index)} rotate={randomRotate()}>
+          <StyledImageButton type="button" name="image" aria-label="image" onClick={() => openLightBox(index)} rotate={randomRotate()}>
             <StyledImg fluid={fluid} />
           </StyledImageButton>
         ))}

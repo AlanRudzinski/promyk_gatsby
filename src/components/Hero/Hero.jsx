@@ -72,5 +72,4 @@ const Hero = ({ motto }) => (
   />
 );
 
-
 export default Hero;

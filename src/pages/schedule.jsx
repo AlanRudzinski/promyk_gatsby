@@ -7,7 +7,6 @@ import ScheduleContent from 'components/uniqueComponents/ScheduleContent';
 import Seo from 'components/Seo';
 import Layout from 'containers/Layout';
 
-
 const schedulePage = ({ data }) => (
   <Layout dataCMS={data.datoCmsContact} bgFooter={hexToRGBA('#DA647C', 0.5)}>
     <Seo title="Nasz Dzień" />

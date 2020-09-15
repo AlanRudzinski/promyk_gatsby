@@ -6,7 +6,6 @@ import Section from 'containers/Section';
 import Crab from 'images/crab.svg';
 import ScheduleContent from 'components/uniqueComponents/ScheduleContent';
 
-
 const StyledImg = styled(Crab)`
   width: 80px;
   height: 91.5px;
@@ -27,6 +26,5 @@ const OurDay = ({ data }) => (
     </Container>
   </Section>
 );
-
 
 export default OurDay;

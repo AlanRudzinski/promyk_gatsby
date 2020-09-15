@@ -13,7 +13,6 @@ import FirstFooterAlgae from 'images/path4917.svg';
 import SecondFooterAlgae from 'images/path4915.svg';
 import ThirdFooterAlgae from 'images/path4916.svg';
 
-
 const StyledFooterSquid = styled(FooterSquid)`
   width: 176px;
   height: 188px;

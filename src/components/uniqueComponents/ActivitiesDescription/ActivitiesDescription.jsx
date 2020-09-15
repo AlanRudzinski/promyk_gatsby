@@ -9,7 +9,6 @@ import SecondSquid from 'images/group84.svg';
 import ThirdSquid from 'images/group167.svg';
 import FourthSquid from 'images/group75.svg';
 
-
 const StyledContainer = styled.div`
   width: 100%;
   background-color: #5FB3B6;
