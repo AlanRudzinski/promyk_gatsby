@@ -32,7 +32,7 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "public/"
         strip_components: 1
-        target: "domains/gha.akademiapromyk.pl/public_html/"
+        target: "domains/akademiapromyk.pl/public_html/"
       
 # # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # jobs:
