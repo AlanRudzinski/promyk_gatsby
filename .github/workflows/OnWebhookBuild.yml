@@ -23,13 +23,13 @@ jobs:
     - name: Build-gatsby
       run: "yarn build"
     - uses: actions/checkout@master
-    - name: copy file via ssh password
+    - name: copy file via ssh key
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.KEY }}
         source: "public/"
         target: "domains/gha.akademiapromyk.pl/public_html/"
       
